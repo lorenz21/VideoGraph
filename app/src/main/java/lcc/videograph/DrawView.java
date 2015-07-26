@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -25,23 +26,28 @@ public class DrawView extends View {
     public DrawView(Context context) {
         super(context);
         init(null, 0);
+
+
     }
 
     public DrawView(Context context,AttributeSet attrs){
         super(context, attrs);
         circlePoints = new ArrayList<Point>();
         init(attrs, 0);
+
     }
 
     public DrawView(Context context, AttributeSet attrs, int defStyle){
         super(context, attrs, defStyle);
         init(attrs, defStyle);
+
     }
 
     public void init(AttributeSet attrs, int defStyle){
         doodle_paint.setColor(Color.YELLOW);
         doodle_paint.setAntiAlias(true);
         doodle_paint.setStyle(Paint.Style.FILL);
+
     }
 
     @Override
@@ -59,16 +65,20 @@ public class DrawView extends View {
     @Override
     public boolean onTouchEvent(MotionEvent motionEvent){
         if(motionEvent.getAction() == MotionEvent.ACTION_DOWN ) {
-            float touchX = motionEvent.getX();
-            float touchY = motionEvent.getY();
+            float touchX = motionEvent.getRawX();
+            float touchY = motionEvent.getRawY();
             circlePoints.add(new Point(Math.round(touchX), Math.round(touchY)));
+            String points = String.valueOf(circlePoints);
+            Log.d("MyTag",points);
             // indicate view should be redrawn
             postInvalidate();
             return true;
+
         }
 
         return false;
     }
+
 
 
 

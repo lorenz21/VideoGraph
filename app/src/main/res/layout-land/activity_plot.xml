@@ -1,52 +1,75 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="300dp">
+        <VideoView
+            android:layout_width="fill_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_height="300dp"
+            android:id="@+id/videoView2"
+            android:layout_gravity="center" />
+        <lcc.videograph.DrawView
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
 
-    <VideoView
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/time_text"
+            android:layout_gravity="left|top"
+            android:background="@android:color/background_dark"
+            android:textColor="#ffff493f"
+            android:textSize="12sp" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
         android:layout_height="match_parent"
-        android:id="@+id/videoView2"
-        android:layout_gravity="center" />
-    <lcc.videograph.DrawView
-        android:layout_width="match_parent"
-        android:layout_height="464dp" />
+        android:background="#00b0f0">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=" Seek >>"
-        android:id="@+id/seek_fwd"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_gravity="right|bottom" />
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/delete_button"
+            android:background="@android:drawable/ic_delete" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="&lt;&lt; Seek"
-        android:id="@+id/seek_back"
-        android:layout_gravity="left|bottom" />
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/back_button"
+            android:background="@android:drawable/ic_media_previous" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Capture"
-        android:id="@+id/capture_button"
-        android:layout_gravity="center_horizontal|bottom" />
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/fwd_button"
+            android:background="@android:drawable/ic_media_next" />
 
-    <TextView
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/time_text"
-        android:layout_gravity="left|top"
-        android:background="@android:color/background_dark"
-        android:textColor="#ffff493f"
-        android:textSize="12sp" />
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:id="@+id/graph_button"
+            android:background="@drawable/graph_button" />
 
-</FrameLayout>
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/seek_back"
+            android:background="@android:drawable/ic_media_rew"
+            />
+
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/seek_fwd"
+            android:background="@android:drawable/ic_media_ff" />
+
+    </LinearLayout>
+</LinearLayout>
