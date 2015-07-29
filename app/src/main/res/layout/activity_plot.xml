@@ -15,7 +15,8 @@
         android:layout_gravity="center" />
     <lcc.videograph.DrawView
         android:layout_width="match_parent"
-        android:layout_height="550dp" />
+        android:layout_height="550dp"
+        android:id="@+id/drawView"/>
 
         <TextView
         android:layout_width="60dp"

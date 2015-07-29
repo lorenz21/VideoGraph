@@ -23,10 +23,11 @@ public class DrawView extends View {
     private List<Point> circlePoints;
 
 
+
+
     public DrawView(Context context) {
         super(context);
         init(null, 0);
-
 
     }
 
@@ -69,7 +70,10 @@ public class DrawView extends View {
             float touchY = motionEvent.getRawY();
             circlePoints.add(new Point(Math.round(touchX), Math.round(touchY)));
             String points = String.valueOf(circlePoints);
-            Log.d("MyTag",points);
+            Log.d("MyTag", points);
+           // int currentTime = (Integer)getTag();
+            //String cT = String.valueOf(currentTime);
+            //Log.d("MyTag2", cT);
             // indicate view should be redrawn
             postInvalidate();
             return true;
@@ -78,7 +82,6 @@ public class DrawView extends View {
 
         return false;
     }
-
 
 
 

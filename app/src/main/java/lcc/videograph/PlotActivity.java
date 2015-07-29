@@ -7,7 +7,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
@@ -18,13 +17,15 @@ import android.widget.VideoView;
 public class PlotActivity extends Activity {
 
     //MediaController class is used with media for controls like play, stop, seek.....
-    MediaController myMediaController;
+    //MediaController myMediaController;
     //A view used to play videos.
     VideoView myVideoView;
     //Variable that is used to increment a number and frames.
     int count = 0;
     int back = 0;
     double dnum = 0.0;
+    //int currentTime;
+    //final View drawInstance = (View) findViewById(R.id.drawView);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +37,8 @@ public class PlotActivity extends Activity {
         //Uniform Resource Identifier(Uri) is used as an address to identify things
         myVideoView.setVideoURI(Uri.parse(vidPath));
         //Initializing the MediaController for the video to be played.
-        myMediaController = new MediaController(this);
-        myVideoView.setMediaController(myMediaController);
+        //myMediaController = new MediaController(this);
+        //myVideoView.setMediaController(myMediaController);
         // These listeners help to get information about the videoview player
         // Completion listeners can be used to explaing when video is done, and what to do.
         myVideoView.setOnCompletionListener(myVideoViewCompletionListener);
@@ -64,6 +65,8 @@ public class PlotActivity extends Activity {
                     count = myVideoView.getCurrentPosition() + 250;
                     TextView runTime = (TextView)findViewById(R.id.time_text);
                     runTime.setText(Integer.toString(myVideoView.getCurrentPosition()) + " (ms)");
+                    //currentTime = count;
+                    //drawInstance.setTag(currentTime);
                 }
 
             }
@@ -118,6 +121,7 @@ public class PlotActivity extends Activity {
                 startActivity(intent);
             }
         });
+
 
     }
 
