@@ -24,13 +24,14 @@ public class PlotActivity extends Activity {
     int count = 0;
     int back = 0;
     double dnum = 0.0;
-    //int currentTime;
-    //final View drawInstance = (View) findViewById(R.id.drawView);
+    int currentTime;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plot);
+        final View drawInstance = (View) findViewById(R.id.drawView);
         String vidPath = getIntent().getStringExtra("vidPath");
         //Initializing videoView to link this java activity to the .xml layout.
         myVideoView = (VideoView) findViewById(R.id.videoView2);
@@ -40,7 +41,7 @@ public class PlotActivity extends Activity {
         //myMediaController = new MediaController(this);
         //myVideoView.setMediaController(myMediaController);
         // These listeners help to get information about the videoview player
-        // Completion listeners can be used to explaing when video is done, and what to do.
+        // Completion listeners can be used to explaning when video is done, and what to do.
         myVideoView.setOnCompletionListener(myVideoViewCompletionListener);
         //Used to display time of still image from frame.
         myVideoView.setOnPreparedListener(MyVideoViewPreparedListener);
@@ -59,14 +60,16 @@ public class PlotActivity extends Activity {
                 if(myVideoView.getCurrentPosition() < myVideoView.getDuration()) {
                     //Keeps a count and seeks video to specified frame..
                     //Which is 1/10 of a sec or 100 milliseconds.
+                    currentTime = count;
+                    //
+                    drawInstance.setTag(currentTime);
                     myVideoView.seekTo(count);
                     //dnum = dnum + 33.33;
                     //count = (int)Math.round(dnum);
                     count = myVideoView.getCurrentPosition() + 250;
-                    TextView runTime = (TextView)findViewById(R.id.time_text);
+                    TextView runTime = (TextView) findViewById(R.id.time_text);
                     runTime.setText(Integer.toString(myVideoView.getCurrentPosition()) + " (ms)");
-                    //currentTime = count;
-                    //drawInstance.setTag(currentTime);
+
                 }
 
             }
@@ -77,6 +80,9 @@ public class PlotActivity extends Activity {
             public void onClick(View view) {
                 if(myVideoView.getCurrentPosition() >= 0){
                     count = myVideoView.getCurrentPosition() - 250;
+                    //
+                    currentTime = count;
+                    drawInstance.setTag(currentTime);
                     myVideoView.seekTo(count
                     );
                     TextView runTime = (TextView)findViewById(R.id.time_text);
@@ -91,6 +97,9 @@ public class PlotActivity extends Activity {
             public void onClick(View view) {
                 if(myVideoView.getCurrentPosition() >= 0){
                     count = myVideoView.getCurrentPosition() - 1000;
+                    //
+                    currentTime = count;
+                    drawInstance.setTag(currentTime);
                     myVideoView.seekTo(count
                     );
                     TextView runTime = (TextView)findViewById(R.id.time_text);
@@ -104,6 +113,8 @@ public class PlotActivity extends Activity {
             public void onClick(View view) {
                 if(myVideoView.getCurrentPosition() < myVideoView.getDuration()) {
                     //Keeps a count and seeks video to specified frame.Which is 1 sec, let's user get through video faster.
+                    currentTime = count;
+                    drawInstance.setTag(currentTime);
                     myVideoView.seekTo(count);
                     count = myVideoView.getCurrentPosition() + 1000;
                     TextView runTime = (TextView)findViewById(R.id.time_text);

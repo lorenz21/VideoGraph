@@ -59,6 +59,7 @@ public class DrawView extends View {
         //canvas.drawCircle(point.x, point.y, 20, doodle_paint);
         for (Point p : circlePoints) {
             canvas.drawCircle(p.x, p.y, 30, doodle_paint);
+
         }
 
     }
@@ -71,9 +72,10 @@ public class DrawView extends View {
             circlePoints.add(new Point(Math.round(touchX), Math.round(touchY)));
             String points = String.valueOf(circlePoints);
             Log.d("MyTag", points);
-           // int currentTime = (Integer)getTag();
-            //String cT = String.valueOf(currentTime);
-            //Log.d("MyTag2", cT);
+            //Used to get() the current time in video.
+            int currentTime = (Integer)getTag();
+            String cT = String.valueOf(currentTime);
+            Log.d("MyTag3", cT);
             // indicate view should be redrawn
             postInvalidate();
             return true;
