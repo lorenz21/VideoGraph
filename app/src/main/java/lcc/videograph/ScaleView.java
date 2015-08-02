@@ -14,57 +14,68 @@ import java.util.ArrayList;
  * Created by Joseph on 7/31/2015.
  */
 public class ScaleView extends View {
-
-
     ArrayList<Integer> xCorr = new ArrayList<Integer>();
-    ArrayList <Integer> yCorr = new ArrayList<Integer>();
-    int x1,y1;
-
+    ArrayList<Integer> yCorr = new ArrayList<Integer>();
+    int x1, y1, x2, y2, xScale, yScale, xCircle, yCircle;
+    int count = 0;
     private Paint paint = new Paint();
 
-    public ScaleView(Context context){
+    public ScaleView(Context context) {
         super(context);
         init(null, 0);
     }
 
-    public ScaleView(Context context, AttributeSet attrs){
+    public ScaleView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(attrs, 0);
     }
 
-    public ScaleView(Context context, AttributeSet attrs, int defStyle){
-        super(context,attrs,defStyle);
+    public ScaleView(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
         init(attrs, defStyle);
     }
 
-    public void init(AttributeSet attrs, int defStyle){
+    public void init(AttributeSet attrs, int defStyle) {
         paint.setColor(Color.YELLOW);
         paint.setAntiAlias(true);
-        paint.setStyle(Paint.Style.FILL);
+        paint.setStyle(Paint.Style.FILL_AND_STROKE);
+        paint.setStrokeWidth(20);
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        canvas.drawCircle(x1,y1,15,paint);
-
-
+        canvas.drawLine(x1, y1, x2, y2, paint);
+        canvas.drawCircle(xCircle, yCircle, 15, paint);
+        canvas.drawCircle(x2, y2, 15, paint);
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent motionEvent) {
-
-        if(motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+        if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
             float touchX = motionEvent.getX();
             float touchY = motionEvent.getY();
             xCorr.add(new Integer(Math.round(touchX)));
             yCorr.add(new Integer(Math.round(touchY)));
-            x1 = xCorr.get(0);
-            y1 = yCorr.get(0);
+            xCircle = xCorr.get(0);
+            yCircle = yCorr.get(0);
+            count = count + 1;
+            if (count == 2) {
+                x1 = xCorr.get(0);
+                y1 = yCorr.get(0);
+                x2 = xCorr.get(1);
+                y2 = yCorr.get(1);
+                xScale = x2 - x1;
+                yScale = y2 - y1;
+            }
+/*
+String xAxis = String.valueOf(xScale);
+String yAxis = String.valueOf(yScale);
+Log.i("MyTag"," The x is"+xAxis +" The y is"+ yAxis);
+*/
             postInvalidate();
             return true;
         }
         return false;
     }
-
 }
