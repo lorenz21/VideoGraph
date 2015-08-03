@@ -7,6 +7,7 @@ import android.graphics.Point;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.renderscript.Sampler;
 import android.view.Display;
 import android.view.View;
 import android.widget.Button;
@@ -22,11 +23,13 @@ public class  MainActivity extends Activity {
     VideoView myVideoView;
     int count = 0;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.openGallery();
+
 
     }
 
@@ -67,7 +70,7 @@ public class  MainActivity extends Activity {
                 submitButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View View) {
-                        Intent intent = new Intent(getApplicationContext(), PlotActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), ScaleActivity.class);
                         intent.putExtra("vidPath", vidPathString);
                         startActivity(intent);
                     }
