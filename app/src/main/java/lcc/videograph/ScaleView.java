@@ -19,9 +19,11 @@ import java.util.ArrayList;
 public class ScaleView extends View {
     ArrayList<Integer> xCorr = new ArrayList<Integer>();
     ArrayList<Integer> yCorr = new ArrayList<Integer>();
-    int x1, y1, x2, y2, xScale, yScale, xCircle, yCircle;
+    public int x1, y1, x2, y2, xScale, yScale, xCircle, yCircle;
     int count = 0;
     private Paint paint = new Paint();
+    SharedPreferences pref = getContext().getSharedPreferences("MyPref",Context.MODE_PRIVATE);
+    SharedPreferences.Editor editor = pref.edit();
 
 
     public ScaleView(Context context) {
@@ -71,7 +73,11 @@ public class ScaleView extends View {
                 y2 = yCorr.get(1);
                 xScale = x2 - x1;
                 yScale = y2 - y1;
-
+                editor.putInt("x1", x1);
+                editor.putInt("x2", x2);
+                editor.putInt("y1", y1);
+                editor.putInt("y2", y2);
+                editor.commit();
             }
 /*
 String xAxis = String.valueOf(xScale);

@@ -9,6 +9,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,8 +22,9 @@ public class DrawView extends View {
     private Paint doodle_paint = new Paint();
     // Store circles to draw each time the user touches down
     private List<Point> circlePoints;
+    public static List<Integer> time = new ArrayList<Integer>();
 
-
+    final View drawInstance = (View) findViewById(R.id.drawView);
 
 
     public DrawView(Context context) {
@@ -74,8 +76,10 @@ public class DrawView extends View {
             Log.d("MyTag", points);
             //Used to get() the current time in video.
             int currentTime = (Integer)getTag();
-            String cT = String.valueOf(currentTime);
+            time.add(currentTime);
+            String cT = String.valueOf(time);
             Log.d("MyTag3", cT);
+            drawInstance.setTag(time);
             // indicate view should be redrawn
             postInvalidate();
             return true;
@@ -85,7 +89,12 @@ public class DrawView extends View {
         return false;
     }
 
+    public static void setTime(List<Integer> time) {
+        DrawView.time = time;
+    }
 
-
+    public static List<Integer> getTime() {
+        return time;
+    }
 }
 

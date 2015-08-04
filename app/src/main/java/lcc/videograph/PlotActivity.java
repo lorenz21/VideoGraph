@@ -5,11 +5,15 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Joseph on 7/23/2015.
@@ -25,6 +29,7 @@ public class PlotActivity extends Activity {
     int back = 0;
     double dnum = 0.0;
     int currentTime;
+
 
 
     @Override
@@ -130,6 +135,14 @@ public class PlotActivity extends Activity {
                 Intent intent = getIntent();
                 finish();
                 startActivity(intent);
+            }
+        });
+        final ArrayList<Integer> time = (ArrayList<Integer>) DrawView.getTime();
+        ImageButton graphButton = (ImageButton) findViewById(R.id.graph_button);
+        graphButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick (View view){
+                String timeTest = String.valueOf(time);
+                Log.d("MyTag4", timeTest);
             }
         });
 

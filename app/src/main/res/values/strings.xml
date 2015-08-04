@@ -2,6 +2,13 @@
     <string name="app_name">VideoGraph</string>
 
     <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
     <string name="title_activity_scale">ScaleActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_text">Select what units used to measure the object.</string>
+    <string name="radioButton_meters">Meters</string>
+    <string name="radioButton_English">Feet and Inches</string>
+    <string name="editText_meters">Type meters here</string>
+    <string name="editText_feet">Type feet here</string>
+    <string name="editText_inches">Type inches here</string>
+    <string name="nextText">Next</string>
 </resources>
