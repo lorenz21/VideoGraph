@@ -89,10 +89,6 @@ public class DrawView extends View {
         return false;
     }
 
-    public static void setTime(List<Integer> time) {
-        DrawView.time = time;
-    }
-
     public static List<Integer> getTime() {
         return time;
     }

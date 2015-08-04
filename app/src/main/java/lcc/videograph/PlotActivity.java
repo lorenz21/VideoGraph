@@ -137,7 +137,7 @@ public class PlotActivity extends Activity {
                 startActivity(intent);
             }
         });
-        final ArrayList<Integer> time = (ArrayList<Integer>) DrawView.getTime();
+        final List<Integer> time = DrawView.getTime();
         ImageButton graphButton = (ImageButton) findViewById(R.id.graph_button);
         graphButton.setOnClickListener(new View.OnClickListener(){
             public void onClick (View view){
