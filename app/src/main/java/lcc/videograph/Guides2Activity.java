@@ -127,4 +127,4 @@ public class Guides2Activity extends ActionBarActivity {
     }
 }
 
-//blah blah
+//blah
