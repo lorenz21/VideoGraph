@@ -19,12 +19,15 @@ import java.util.List;
  */
 public class DrawView extends View {
 
-    private Paint doodle_paint = new Paint();
+    private Paint paint = new Paint();
     // Store circles to draw each time the user touches down
-    private List<Point> circlePoints;
-    public static List<Integer> time = new ArrayList<Integer>();
+    private  List<Point> circlePoints = new ArrayList<Point>();
+    private static List<Integer> time = new ArrayList<Integer>();
+    private static List<Float> xTap = new ArrayList<Float>();
+    private static List<Float> yTap = new ArrayList<Float>();
+    private static double scale = ScaleActivity.getScale();
+    float scaleFloat = (float)(scale);
 
-    final View drawInstance = (View) findViewById(R.id.drawView);
 
 
     public DrawView(Context context) {
@@ -35,7 +38,6 @@ public class DrawView extends View {
 
     public DrawView(Context context,AttributeSet attrs){
         super(context, attrs);
-        circlePoints = new ArrayList<Point>();
         init(attrs, 0);
 
     }
@@ -47,20 +49,18 @@ public class DrawView extends View {
     }
 
     public void init(AttributeSet attrs, int defStyle){
-        doodle_paint.setColor(Color.YELLOW);
-        doodle_paint.setAntiAlias(true);
-        doodle_paint.setStyle(Paint.Style.FILL);
+        paint.setColor(Color.YELLOW);
+        paint.setAntiAlias(true);
+        paint.setStyle(Paint.Style.FILL);
 
     }
 
     @Override
     public void onDraw(Canvas canvas){
         super.onDraw(canvas);
-        //canvas.drawLine(0, 0, getWidth(), getHeight(), doodle_paint);
-        //canvas.drawPath(path, doodle_paint);
-        //canvas.drawCircle(point.x, point.y, 20, doodle_paint);
+
         for (Point p : circlePoints) {
-            canvas.drawCircle(p.x, p.y, 30, doodle_paint);
+            canvas.drawCircle(p.x, p.y, 20, paint);
 
         }
 
@@ -72,14 +72,21 @@ public class DrawView extends View {
             float touchX = motionEvent.getRawX();
             float touchY = motionEvent.getRawY();
             circlePoints.add(new Point(Math.round(touchX), Math.round(touchY)));
+            xTap.add(scaleFloat * touchX);
+            yTap.add(scaleFloat * (touchY));
             String points = String.valueOf(circlePoints);
-            Log.d("MyTag", points);
+            Log.d("DrawView", points);
             //Used to get() the current time in video.
             int currentTime = (Integer)getTag();
             time.add(currentTime);
             String cT = String.valueOf(time);
-            Log.d("MyTag3", cT);
-            drawInstance.setTag(time);
+            Log.d("DrawView2", cT);
+
+            String xTapTest = String.valueOf(xTap);
+            Log.d("DrawView3", xTapTest);
+
+            String yTapTest = String.valueOf(yTap);
+            Log.d("DrawView4", yTapTest);
             // indicate view should be redrawn
             postInvalidate();
             return true;
@@ -89,12 +96,30 @@ public class DrawView extends View {
         return false;
     }
 
+    public static List<Integer> getTime() {
+
+        return time;
+    }
+
     public static void setTime(List<Integer> time) {
+
         DrawView.time = time;
     }
 
-    public static List<Integer> getTime() {
-        return time;
+    public static List<Float> getxTap() {
+        return xTap;
+    }
+
+    public static void setxTap(List<Float> xTap) {
+        DrawView.xTap = xTap;
+    }
+
+    public static List<Float> getyTap() {
+        return yTap;
+    }
+
+    public static void setyTap(List<Float> yTap) {
+        DrawView.yTap = yTap;
     }
 }
 

@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class ScaleView extends View {
     ArrayList<Integer> xCorr = new ArrayList<Integer>();
     ArrayList<Integer> yCorr = new ArrayList<Integer>();
-    public int x1, y1, x2, y2, xScale, yScale, xCircle, yCircle;
+    private static int x1, y1, x2, y2, xCircle, yCircle;
     int count = 0;
     private Paint paint = new Paint();
     SharedPreferences pref = getContext().getSharedPreferences("MyPref",Context.MODE_PRIVATE);
@@ -71,22 +71,52 @@ public class ScaleView extends View {
                 y1 = yCorr.get(0);
                 x2 = xCorr.get(1);
                 y2 = yCorr.get(1);
-                xScale = x2 - x1;
-                yScale = y2 - y1;
-                editor.putInt("x1", x1);
-                editor.putInt("x2", x2);
-                editor.putInt("y1", y1);
-                editor.putInt("y2", y2);
-                editor.commit();
+
             }
-/*
-String xAxis = String.valueOf(xScale);
-String yAxis = String.valueOf(yScale);
-Log.i("MyTag"," The x is"+xAxis +" The y is"+ yAxis);
-*/
+
             postInvalidate();
             return true;
         }
         return false;
+    }
+
+    public static int getX1() {
+
+        return x1;
+    }
+
+    public void setX1(int x1) {
+
+        this.x1 = x1;
+    }
+
+    public static int getY1()
+    {
+        return y1;
+    }
+
+    public void setY1(int y1) {
+
+        this.y1 = y1;
+    }
+
+    public static int getX2() {
+
+        return x2;
+    }
+
+    public void setX2(int x2)
+    {
+        this.x2 = x2;
+    }
+
+    public static int getY2()
+    {
+        return y2;
+    }
+
+    public void setY2(int y2)
+    {
+        this.y2 = y2;
     }
 }
