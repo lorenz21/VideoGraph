@@ -12,4 +12,6 @@
     <string name="editText_inches">Type inches here</string>
     <string name="nextText">Next</string>
     <string name="title_activity_graph">GraphActivity</string>
+    <string name="title_activity_title_screen">TitleScreenActivity</string>
+    <string name="title_activity_guides2">Guides2Activity</string>
 </resources>
