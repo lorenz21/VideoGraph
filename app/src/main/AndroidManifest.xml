@@ -46,6 +46,10 @@
             android:name=".GraphingActivity"
             android:label="@string/title_activity_graphing" >
         </activity>
+        <activity
+            android:name=".ScaleActivity"
+            android:label="@string/title_activity_scale" >
+        </activity>
     </application>
 
 </manifest>
