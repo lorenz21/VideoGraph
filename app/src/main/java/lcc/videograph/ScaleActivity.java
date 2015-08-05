@@ -20,15 +20,16 @@ public class ScaleActivity extends Activity {
     int x2 = ScaleView.getX2();
     int y1 = ScaleView.getY1();
     int y2 = ScaleView.getY2();
-    double scale;
+    private static double scale;
     boolean Meters;
     boolean English;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scale);
-        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", MODE_PRIVATE);
-        SharedPreferences.Editor editor = pref.edit();
         String vidPath = getIntent().getStringExtra("vidPath");
         final RadioButton metersbutton = (RadioButton)findViewById(R.id.radioButton_meters);
         final RadioButton Englishbutton = (RadioButton)findViewById(R.id.radioButton_English);
@@ -132,6 +133,13 @@ public class ScaleActivity extends Activity {
             }
         });
 
+
+    }
+    public static double getScale() {
+        return scale;
     }
 
+    public void setScale(double scale) {
+        this.scale = scale;
+    }
 }

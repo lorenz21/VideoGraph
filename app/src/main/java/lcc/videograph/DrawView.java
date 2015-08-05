@@ -23,8 +23,10 @@ public class DrawView extends View {
     // Store circles to draw each time the user touches down
     private  List<Point> circlePoints = new ArrayList<Point>();
     private static List<Integer> time = new ArrayList<Integer>();
-    private static List<Integer> xTap = new ArrayList<Integer>();
-    private static List<Integer> yTap = new ArrayList<Integer>();
+    private static List<Float> xTap = new ArrayList<Float>();
+    private static List<Float> yTap = new ArrayList<Float>();
+    private static double scale = ScaleActivity.getScale();
+    float scaleFloat = (float)(scale);
 
 
 
@@ -70,8 +72,8 @@ public class DrawView extends View {
             float touchX = motionEvent.getRawX();
             float touchY = motionEvent.getRawY();
             circlePoints.add(new Point(Math.round(touchX), Math.round(touchY)));
-            xTap.add(Math.round(touchX));
-            yTap.add(Math.round(touchY));
+            xTap.add(scaleFloat * touchX);
+            yTap.add(scaleFloat * (touchY));
             String points = String.valueOf(circlePoints);
             Log.d("DrawView", points);
             //Used to get() the current time in video.
@@ -104,14 +106,20 @@ public class DrawView extends View {
         DrawView.time = time;
     }
 
-    public List<Point> getCirclePoints() {
-
-        return circlePoints;
+    public static List<Float> getxTap() {
+        return xTap;
     }
 
-    public void setCirclePoints(List<Point> circlePoints) {
+    public static void setxTap(List<Float> xTap) {
+        DrawView.xTap = xTap;
+    }
 
-        this.circlePoints = circlePoints;
+    public static List<Float> getyTap() {
+        return yTap;
+    }
+
+    public static void setyTap(List<Float> yTap) {
+        DrawView.yTap = yTap;
     }
 }
 
