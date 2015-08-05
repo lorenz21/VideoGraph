@@ -14,6 +14,12 @@ import android.widget.TextView;
 
 public class ScaleActivity extends Activity {
 
+
+    // Random x and y values that will be used until linked with other activity
+    int x1 = ScaleView.getX1();
+    int x2 = ScaleView.getX2();
+    int y1 = ScaleView.getY1();
+    int y2 = ScaleView.getY2();
     double scale;
     boolean Meters;
     boolean English;
@@ -34,11 +40,7 @@ public class ScaleActivity extends Activity {
 
 
 
-        // Random x and y values that will be used until linked with other activity
-        int x1 = pref.getInt("x1",0);
-        int x2 = pref.getInt("x2",0);
-        int y1 = pref.getInt("y1",0);
-        int y2 = pref.getInt("y2",0);
+
 
         // Feet to meters constant
         final int m = 82021/25000;
@@ -56,6 +58,8 @@ public class ScaleActivity extends Activity {
 
                     // Makes the text box visible and usable
                     meterstext.setVisibility(View.VISIBLE);
+                    feettext.setVisibility(View.INVISIBLE);
+                    inchestext.setVisibility(View.INVISIBLE);
 
                     Meters = true;
                     English = false;
@@ -75,6 +79,7 @@ public class ScaleActivity extends Activity {
                 if (Englishbutton.isChecked() == true) {
 
                     // Makes the text boxes visible and usable
+                    meterstext.setVisibility(View.INVISIBLE);
                     feettext.setVisibility(View.VISIBLE);
                     inchestext.setVisibility(View.VISIBLE);
 
@@ -89,10 +94,9 @@ public class ScaleActivity extends Activity {
 
         final Intent scaleIntent = new Intent(getApplicationContext(),PlotActivity.class);
         scaleIntent.putExtra("vidPath",vidPath);
-        scaleIntent.putExtra("Scale",scale);
+
 
         nextText.setOnClickListener(new View.OnClickListener(){
-
             @Override
             public void onClick(View v) {
 
@@ -104,6 +108,7 @@ public class ScaleActivity extends Activity {
 
                     // This is where the scale is created from the typed value and pixel difference
                     scale = meterEntry/pix;
+                    scaleIntent.putExtra("Scale",scale);
                     startActivity(scaleIntent);
 
                     //String tester = Double.toString(scale);
@@ -121,6 +126,7 @@ public class ScaleActivity extends Activity {
 
                     // This is where the scale is created and converted into meters per pixel
                     scale = (feetEntry + (inchesEntry/12))/(m * pix);
+                    scaleIntent.putExtra("Scale",scale);
                     startActivity(scaleIntent);
                 }
             }

@@ -51,7 +51,6 @@
         android:ems="10"
         android:id="@+id/editText_meters"
         android:layout_marginTop="50dp"
-        android:text="@string/editText_meters"
         android:textColor="#ffffffff"
         android:visibility="invisible" />
 
@@ -61,7 +60,6 @@
         android:inputType="number"
         android:ems="10"
         android:id="@+id/editText_feet"
-        android:text="@string/editText_feet"
         android:textColor="#ffffffff"
         android:visibility="invisible" />
 
@@ -71,7 +69,6 @@
         android:inputType="number"
         android:ems="10"
         android:id="@+id/editText_inches"
-        android:text="@string/editText_inches"
         android:textColor="#ffffffff"
         android:visibility="invisible" />
 

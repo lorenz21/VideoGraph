@@ -17,7 +17,6 @@ import android.widget.VideoView;
 
 
 public class  MainActivity extends Activity {
-    private static int RESULT_LOAD_IMG = 1;
     String vidPathString;
     MediaController myMediaController;
     VideoView myVideoView;
@@ -35,23 +34,16 @@ public class  MainActivity extends Activity {
 
     private void openGallery(){
         Intent intentOpenGallery = new Intent(Intent.ACTION_PICK, MediaStore.Video.Media.INTERNAL_CONTENT_URI);
-        startActivityForResult(intentOpenGallery, RESULT_LOAD_IMG);
+        startActivityForResult(intentOpenGallery, 1);
     }
 
-    /*public void loadVideoFromGallery(View view) {
-        // Create intent to Open Video applications like Gallery, Google Photos
-        Intent galleryIntent = new Intent(Intent.ACTION_PICK,
-                android.provider.MediaStore.Video.Media.EXTERNAL_CONTENT_URI);
-        // Start the Intent
-        startActivityForResult(galleryIntent, RESULT_LOAD_IMG);
-    }*/
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         try {
             // When an Video is picked
-            if (requestCode == RESULT_LOAD_IMG && resultCode == RESULT_OK
+            if (requestCode == 1 && resultCode == RESULT_OK
                     && null != data) {
                 // Get the Video from data
                 Uri selectedVideo = data.getData();
@@ -64,6 +56,7 @@ public class  MainActivity extends Activity {
                 cursor.moveToFirst();
 
                 int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                // Used to get path of selected video.
                 vidPathString = cursor.getString(columnIndex);
                 cursor.close();
                 Button submitButton = (Button) findViewById(R.id.submit_button);

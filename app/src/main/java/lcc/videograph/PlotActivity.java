@@ -2,9 +2,11 @@ package lcc.videograph;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Point;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
@@ -31,13 +33,15 @@ public class PlotActivity extends Activity {
     int currentTime;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plot);
-        final View drawInstance = (View) findViewById(R.id.drawView);
         String vidPath = getIntent().getStringExtra("vidPath");
+        Double scale = getIntent().getDoubleExtra("Scale", 0);
+        String timeTest = String.valueOf(scale);
+        Log.d("MyTag4", timeTest);
+        final View drawInstance = (View) findViewById(R.id.drawView);
         //Initializing videoView to link this java activity to the .xml layout.
         myVideoView = (VideoView) findViewById(R.id.videoView2);
         //Uniform Resource Identifier(Uri) is used as an address to identify things
@@ -129,6 +133,7 @@ public class PlotActivity extends Activity {
 
             }
         });
+        //Intent that restarts the current activity.
         ImageButton deleteButton = (ImageButton) findViewById(R.id.delete_button);
         deleteButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -137,12 +142,13 @@ public class PlotActivity extends Activity {
                 startActivity(intent);
             }
         });
-        final List<Integer> time = DrawView.getTime();
+
         ImageButton graphButton = (ImageButton) findViewById(R.id.graph_button);
         graphButton.setOnClickListener(new View.OnClickListener(){
             public void onClick (View view){
-                String timeTest = String.valueOf(time);
-                Log.d("MyTag4", timeTest);
+
+                Intent graphIntent = new Intent(getApplicationContext(), GraphActivity.class);
+                startActivity(graphIntent);
             }
         });
 

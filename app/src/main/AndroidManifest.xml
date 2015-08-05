@@ -30,6 +30,10 @@
             android:name=".ScaleActivity"
             android:label="@string/title_activity_scale" >
         </activity>
+        <activity
+            android:name=".GraphActivity"
+            android:label="@string/title_activity_graph" >
+        </activity>
     </application>
 
 </manifest>
