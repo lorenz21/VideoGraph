@@ -15,11 +15,6 @@
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
         </activity>
         <activity android:name=".HomeActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".PlotActivity"
@@ -27,8 +22,29 @@
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
         </activity>
         <activity
-            android:name=".ScaleActivity"
-            android:label="@string/title_activity_scale" >
+            android:name=".TitleScreenActivity"
+            android:label="@string/title_activity_title_screen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Guides2Activity"
+            android:label="@string/title_activity_guides2" >
+        </activity>
+        <activity
+            android:name=".RollingMaterialsActivity"
+            android:label="@string/title_activity_rolling_materials" >
+        </activity>
+        <activity
+            android:name=".RollingSetupActivity"
+            android:label="@string/title_activity_rolling_setup" >
+        </activity>
+        <activity
+            android:name=".GraphingActivity"
+            android:label="@string/title_activity_graphing" >
         </activity>
     </application>
 
