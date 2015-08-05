@@ -76,20 +76,20 @@ public class DrawView extends View {
             circlePoints.add(new Point(Math.round(touchX), Math.round(touchY)));
             xTap.add(scale * touchX);
             yTap.add(scale * (touchY));
-            String points = String.valueOf(circlePoints);
-            Log.d("DrawView", points);
+            //String points = String.valueOf(circlePoints);
+            //Log.d("DrawView", points);
             //Used to get() the current time in video.
             int currentTime = (Integer)getTag();
             double dTime = (double)(currentTime);
             time.add(dTime);
             String cT = String.valueOf(time);
-            Log.d("DrawView2", cT);
+            Log.d("timeTest", cT);
 
             String xTapTest = String.valueOf(xTap);
-            Log.d("DrawView3", xTapTest);
+            Log.d("xValues", xTapTest);
 
             String yTapTest = String.valueOf(yTap);
-            Log.d("DrawView4", yTapTest);
+            Log.d("yValues", yTapTest);
             // indicate view should be redrawn
             postInvalidate();
             return true;
