@@ -58,7 +58,7 @@ public class PlotActivity extends Activity {
         myVideoView.setOnErrorListener(myVideoViewErrorListener);
         //Sets focus on the widget
         myVideoView.requestFocus();
-        //Initialize seekbutton to be used to go frame-by-frame in video
+        //Initialize seekbutton to be used to go frame-by-frame in video.
         ImageButton buttonFwdSeek = (ImageButton)findViewById(R.id.seek_fwd);
         //Set's OnClickListener to know when the button had been clicked, then executes the code.
         buttonFwdSeek.setOnClickListener(new View.OnClickListener() {
