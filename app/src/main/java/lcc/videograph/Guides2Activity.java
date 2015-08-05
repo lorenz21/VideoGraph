@@ -126,3 +126,5 @@ public class Guides2Activity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 }
+
+//blah blah
