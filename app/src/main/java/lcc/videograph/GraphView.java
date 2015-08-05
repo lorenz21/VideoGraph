@@ -20,6 +20,7 @@ import java.util.List;
 public class GraphView extends SurfaceView {
     final List<Integer> time = DrawView.getTime();
     final List<Float> yValues = DrawView.getyTap();
+    float[] yValuesArray = new float[yValues.size()];
     private Graph graph;
     public GraphView(Context context) {
         super(context);
