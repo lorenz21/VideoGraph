@@ -16,13 +16,6 @@ public class GraphActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_graph);
-        final List<Integer> time = DrawView.getTime();
-        //final List<Point> circlePoints = DrawView.getCirclePoints();
-        String timeTest = String.valueOf(time);
-        Log.d("GraphActivity", timeTest);
-        //String pointTest = String.valueOf(circlePoints);
-        //Log.d("GraphActivity", pointTest);
     }
-
 
 }

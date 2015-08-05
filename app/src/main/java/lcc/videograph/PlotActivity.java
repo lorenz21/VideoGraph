@@ -147,7 +147,7 @@ public class PlotActivity extends Activity {
         graphButton.setOnClickListener(new View.OnClickListener(){
             public void onClick (View view){
 
-                Intent graphIntent = new Intent(getApplicationContext(), GraphActivity.class);
+                Intent graphIntent = new Intent(getApplicationContext(), GraphingActivity.class);
                 startActivity(graphIntent);
             }
         });

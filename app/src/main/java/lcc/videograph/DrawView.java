@@ -22,11 +22,11 @@ public class DrawView extends View {
     private Paint paint = new Paint();
     // Store circles to draw each time the user touches down
     private  List<Point> circlePoints = new ArrayList<Point>();
-    private static List<Integer> time = new ArrayList<Integer>();
-    private static List<Float> xTap = new ArrayList<Float>();
-    private static List<Float> yTap = new ArrayList<Float>();
+    private static List<Double> time = new ArrayList<Double>();
+    private static List<Double> xTap = new ArrayList<Double>();
+    private static List<Double> yTap = new ArrayList<Double>();
     private static double scale = ScaleActivity.getScale();
-    float scaleFloat = (float)(scale);
+
 
 
 
@@ -71,14 +71,17 @@ public class DrawView extends View {
         if(motionEvent.getAction() == MotionEvent.ACTION_DOWN ) {
             float touchX = motionEvent.getRawX();
             float touchY = motionEvent.getRawY();
+            double xTouch = (double)(touchX);
+            double yTouch = (double)(touchY);
             circlePoints.add(new Point(Math.round(touchX), Math.round(touchY)));
-            xTap.add(scaleFloat * touchX);
-            yTap.add(scaleFloat * (touchY));
+            xTap.add(scale * touchX);
+            yTap.add(scale * (touchY));
             String points = String.valueOf(circlePoints);
             Log.d("DrawView", points);
             //Used to get() the current time in video.
             int currentTime = (Integer)getTag();
-            time.add(currentTime);
+            double dTime = (double)(currentTime);
+            time.add(dTime);
             String cT = String.valueOf(time);
             Log.d("DrawView2", cT);
 
@@ -96,29 +99,32 @@ public class DrawView extends View {
         return false;
     }
 
-    public static List<Integer> getTime() {
+    public static List<Double> getTime() {
 
         return time;
     }
 
-    public static void setTime(List<Integer> time) {
+    public static void setTime(List<Double> time) {
 
         DrawView.time = time;
     }
 
-    public static List<Float> getxTap() {
+    public static List<Double> getxTap() {
         return xTap;
     }
 
-    public static void setxTap(List<Float> xTap) {
+    public static void setxTap(List<Double> xTap) {
+
         DrawView.xTap = xTap;
     }
 
-    public static List<Float> getyTap() {
+    public static List<Double> getyTap() {
+
         return yTap;
     }
 
-    public static void setyTap(List<Float> yTap) {
+    public static void setyTap(List<Double> yTap) {
+
         DrawView.yTap = yTap;
     }
 }

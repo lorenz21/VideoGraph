@@ -18,9 +18,10 @@ import java.util.List;
  * @version 1.0
  */
 public class GraphView extends SurfaceView {
-    final List<Integer> time = DrawView.getTime();
-    final List<Float> yValues = DrawView.getyTap();
-    float[] yValuesArray = new float[yValues.size()];
+    final List<Double> time = DrawView.getTime();
+    double[] dTime = new double[time.size()];
+    final List<Double> xValues = DrawView.getxTap();
+    double[] xValuesArray = new double[xValues.size()];
     private Graph graph;
     public GraphView(Context context) {
         super(context);
@@ -70,7 +71,8 @@ public class GraphView extends SurfaceView {
         Rect drawingArea = new Rect(getLeft()+getPaddingLeft(), getTop()+getPaddingTop(), getRight()-getPaddingRight(), getBottom()-getPaddingBottom());
         double [] xPoints = {0,0.267,0.50,0.701,0.901,1.101,1.301,1.502,1.702};
         double [] yPoints = {0,0.10,0.2,0.3,0.4,0.5,0.6,0.7,0.8};
-        DataSeries data = new DataSeries(xPoints, yPoints, 9);
+        //T goes in xpoints - x goes in y points
+        DataSeries data = new DataSeries(dTime, xValuesArray, time.size());
         graph = new Graph(data, drawingArea);
         graph.setFitType(CurveFit.QUAD);
     }
