@@ -42,6 +42,14 @@
             android:name=".Guides2Activity"
             android:label="@string/title_activity_guides2" >
         </activity>
+        <activity
+            android:name=".RollingMaterialsActivity"
+            android:label="@string/title_activity_rolling_materials" >
+        </activity>
+        <activity
+            android:name=".RollingSetupActivity"
+            android:label="@string/title_activity_rolling_setup" >
+        </activity>
     </application>
 
 </manifest>
