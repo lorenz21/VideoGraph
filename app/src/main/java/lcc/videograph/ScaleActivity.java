@@ -1,6 +1,7 @@
 package lcc.videograph;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
@@ -23,7 +24,12 @@ public class ScaleActivity extends Activity {
     private static double scale;
     boolean Meters;
     boolean English;
-
+    RadioButton metersbutton = (RadioButton)findViewById(R.id.radioButton_meters);
+    RadioButton Englishbutton = (RadioButton)findViewById(R.id.radioButton_English);
+    EditText meterstext = (EditText)findViewById(R.id.editText_meters);
+    EditText feettext = (EditText)findViewById(R.id.editText_feet);
+    EditText inchestext = (EditText)findViewById(R.id.editText_inches);
+    TextView nextText = (TextView)findViewById(R.id.nextText);
 
 
     @Override
@@ -31,17 +37,6 @@ public class ScaleActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scale);
         String vidPath = getIntent().getStringExtra("vidPath");
-        final RadioButton metersbutton = (RadioButton)findViewById(R.id.radioButton_meters);
-        final RadioButton Englishbutton = (RadioButton)findViewById(R.id.radioButton_English);
-        final EditText meterstext = (EditText)findViewById(R.id.editText_meters);
-        final EditText feettext = (EditText)findViewById(R.id.editText_feet);
-        final EditText inchestext = (EditText)findViewById(R.id.editText_inches);
-        final TextView nextText = (TextView)findViewById(R.id.nextText);
-        //final TextView test = (TextView)findViewById(R.id.testView);
-
-
-
-
 
         // Feet to meters constant
         final int m = 82021/25000;

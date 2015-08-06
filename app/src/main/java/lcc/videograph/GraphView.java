@@ -7,6 +7,7 @@ import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.SurfaceView;
 
 import java.util.List;
@@ -18,10 +19,10 @@ import java.util.List;
  * @version 1.0
  */
 public class GraphView extends SurfaceView {
-    final List<Double> time = DrawView.getTime();
-    double[] dTime = new double[time.size()];
-    final List<Double> xValues = DrawView.getxTap();
-    double[] xValuesArray = new double[xValues.size()];
+    List<Double> time = DrawView.getTime();
+    List<Double> xValues = DrawView.getxTap();
+
+
     private Graph graph;
     public GraphView(Context context) {
         super(context);
@@ -69,10 +70,24 @@ public class GraphView extends SurfaceView {
     }
     private void init(){
         Rect drawingArea = new Rect(getLeft()+getPaddingLeft(), getTop()+getPaddingTop(), getRight()-getPaddingRight(), getBottom()-getPaddingBottom());
-        double [] xPoints = {0,0.267,0.50,0.701,0.901,1.101,1.301,1.502,1.702};
-        double [] yPoints = {0,0.10,0.2,0.3,0.4,0.5,0.6,0.7,0.8};
+        //double [] xPoints = {0,0.267,0.50,0.701,0.901,1.101,1.301,1.502,1.702};
+        //double [] yPoints = {0,0.10,0.2,0.3,0.4,0.5,0.6,0.7,0.8};
+        double tPoints[] = new double[time.size()];
+        for(int i = 0; i<time.size(); i++){
+            tPoints[i] = time.get(i);
+            String arrTime = String.valueOf(tPoints[i]);
+            Log.d("GraphTime", arrTime);
+        }
+        double xPoints[] = new double[xValues.size()];
+        for(int i = 0; i<xValues.size(); i++){
+            xPoints[i] = xValues.get(i);
+            String arrX = String.valueOf(xPoints[i]);
+            Log.d("GraphX", arrX);
+        }
+
+
         //T goes in xpoints - x goes in y points
-        DataSeries data = new DataSeries(dTime, xValuesArray, time.size());
+        DataSeries data = new DataSeries(tPoints, xPoints, time.size());
         graph = new Graph(data, drawingArea);
         graph.setFitType(CurveFit.QUAD);
     }

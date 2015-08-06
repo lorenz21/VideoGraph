@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class ScaleView extends View {
     ArrayList<Integer> xCorr = new ArrayList<Integer>();
     ArrayList<Integer> yCorr = new ArrayList<Integer>();
-    private static int x1, y1, x2, y2, xCircle, yCircle;
+    private static int x1,y1, x2, y2, xCircle, yCircle;
     int count = 0;
     private Paint paint = new Paint();
     SharedPreferences pref = getContext().getSharedPreferences("MyPref",Context.MODE_PRIVATE);
@@ -41,6 +41,8 @@ public class ScaleView extends View {
         init(attrs, defStyle);
     }
 
+
+
     public void init(AttributeSet attrs, int defStyle) {
         paint.setColor(Color.YELLOW);
         paint.setAntiAlias(true);
@@ -51,9 +53,9 @@ public class ScaleView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        canvas.drawLine(x1, y1, x2, y2, paint);
         canvas.drawCircle(xCircle, yCircle, 15, paint);
         canvas.drawCircle(x2, y2, 15, paint);
+        canvas.drawLine(x1, y1, x2, y2, paint);
     }
 
     @Override
@@ -80,15 +82,17 @@ public class ScaleView extends View {
         return false;
     }
 
+    public void setX1(int x1) {
+
+        this.x1 = x1;
+    }
+
     public static int getX1() {
 
         return x1;
     }
 
-    public void setX1(int x1) {
 
-        this.x1 = x1;
-    }
 
     public static int getY1()
     {

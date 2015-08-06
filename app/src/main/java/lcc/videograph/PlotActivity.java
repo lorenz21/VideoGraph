@@ -57,6 +57,7 @@ public class PlotActivity extends Activity {
         //Used to display is any errors went on when video started or was playing.
         myVideoView.setOnErrorListener(myVideoViewErrorListener);
         //Sets focus on the widget
+        myVideoView.seekTo(count);
         myVideoView.requestFocus();
         //Initialize seekbutton to be used to go frame-by-frame in video.
         ImageButton buttonFwdSeek = (ImageButton)findViewById(R.id.seek_fwd);
