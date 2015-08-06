@@ -107,9 +107,6 @@ public class ScaleActivity extends Activity {
                     scaleIntent.putExtra("Scale",scale);
                     startActivity(scaleIntent);
 
-                    //String tester = Double.toString(scale);
-                    //test.setText(tester);
-
 
                 }
                 else if(English = true){
