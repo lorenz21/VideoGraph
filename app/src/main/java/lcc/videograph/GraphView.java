@@ -19,10 +19,9 @@ import java.util.List;
  * @version 1.0
  */
 public class GraphView extends SurfaceView {
-    final List<Double> time = DrawView.getTime();
-    double[] dTime = new double[time.size()];
-    final List<Double> xValues = DrawView.getxTap();
-    double[] xValuesArray = new double[xValues.size()];
+    List<Double> time = DrawView.getTime();
+    List<Double> xValues = DrawView.getxTap();
+
 
 
     private Graph graph;
@@ -73,12 +72,21 @@ public class GraphView extends SurfaceView {
     }
     private void init(){
         Rect drawingArea = new Rect(getLeft()+getPaddingLeft(), getTop()+getPaddingTop(), getRight()-getPaddingRight(), getBottom()-getPaddingBottom());
-        double [] xPoints = {0,0.267,0.50,0.701,0.901,1.101,1.301,1.502,1.702};
-        double [] yPoints = {0,0.10,0.2,0.3,0.4,0.5,0.6,0.7,0.8};
+        //double [] xPoints = {0,0.267,0.50,0.701,0.901,1.101,1.301,1.502,1.702};
+        //double [] yPoints = {0,0.10,0.2,0.3,0.4,0.5,0.6,0.7,0.8};
+        double tPoints[] = new double[time.size()];
+        for(int i = 0; i < time.size(); i++){
+            tPoints[i] = time.get(i);
+        }
+        double xPoints[] = new double[xValues.size()];
+        for(int i = 0; i < xValues.size(); i++){
+            xPoints[i] = xValues.get(i);
+        }
+
         String xAxis = String.valueOf(xValues);
         Log.d("xValuesGraph", xAxis);
         //T goes in xpoints - x goes in y points.. dTime, xValuesArray, time.size()
-        DataSeries data = new DataSeries(xValuesArray,dTime,time.size());
+        DataSeries data = new DataSeries(xPoints,tPoints,time.size());
         graph = new Graph(data, drawingArea);
         graph.setFitType(CurveFit.QUAD);
     }
