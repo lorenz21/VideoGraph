@@ -25,7 +25,7 @@ public class DrawView extends View {
     private static List<Double> time = new ArrayList<Double>();
     private static List<Double> xTap = new ArrayList<Double>();
     private static List<Double> yTap = new ArrayList<Double>();
-    //private static double scale = ScaleActivity.getScale();
+    private static double scale = ScaleActivity.getScale();
 
 
 
