@@ -17,11 +17,12 @@ public class ScaleActivity extends Activity {
 
 
     // Random x and y values that will be used until linked with other activity
-    int x1 = ScaleView.getX1();
-    int x2 = ScaleView.getX2();
-    int y1 = ScaleView.getY1();
-    int y2 = ScaleView.getY2();
-    private static double scale;
+    GraphData data;
+    int x1 = data.getX1();
+    int x2 = data.getX2();
+    int y1 = data.getY1();
+    int y2 = data.getY2();
+    private double scale;
     boolean Meters;
     boolean English;
 
@@ -132,14 +133,15 @@ public class ScaleActivity extends Activity {
                 }
             }
         });
-
+                    data.setScale(scale);
 
     }
+    /*
     public static double getScale() {
         return scale;
     }
 
     public void setScale(double scale) {
         this.scale = scale;
-    }
+    }*/
 }

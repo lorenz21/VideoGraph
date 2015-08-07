@@ -2,11 +2,9 @@ package lcc.videograph;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.renderscript.Sampler;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -19,9 +17,14 @@ import java.util.ArrayList;
 public class ScaleView extends View {
     ArrayList<Integer> xCorr = new ArrayList<Integer>();
     ArrayList<Integer> yCorr = new ArrayList<Integer>();
-    private static int x1, y1, x2, y2, xCircle, yCircle;
+    private int x1 = 0;
+    private int x2 = 0;
+    private int y1 = 0;
+    private int y2 = 0;
+    private int xCircle, yCircle;
     int count = 0;
     private Paint paint = new Paint();
+    GraphData data;
 
 
     public ScaleView(Context context) {
@@ -76,13 +79,21 @@ public class ScaleView extends View {
                 y2 = yCorr.get(1);
 
             }
-
+            if(data != null){
+                data.setX1(x1);
+                data.setX2(x2);
+                data.setY1(y1);
+                data.setY2(y2);
+            }
             postInvalidate();
             return true;
+
         }
         return false;
+
     }
 
+    /*
     public static int getX1() {
 
         return x1;
@@ -121,5 +132,5 @@ public class ScaleView extends View {
     public void setY2(int y2)
     {
         this.y2 = y2;
-    }
+    }*/
 }
