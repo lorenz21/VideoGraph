@@ -1,7 +1,6 @@
 package lcc.videograph;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -25,7 +24,8 @@ public class ScaleView extends View {
     private int xCircle, yCircle;
     int count = 0;
     private Paint paint = new Paint();
-    GraphData data;
+    GraphData data = new GraphData(5, 5, 5, 5);
+
 
 
     public ScaleView(Context context) {
@@ -78,7 +78,7 @@ public class ScaleView extends View {
                 y1 = yCorr.get(0);
                 x2 = xCorr.get(1);
                 y2 = yCorr.get(1);
-                data = new GraphData(x1, x2, y1, y2);
+                //data = new GraphData(x1, x2, y1, y2);
 
                 /*
                 data.setX1(x1);
@@ -98,45 +98,10 @@ public class ScaleView extends View {
         }
         return false;
 
-    }
-    /*
-    public static int getX1() {
 
-        return x1;
     }
 
-    public void setX1(int x1) {
-
-        this.x1 = x1;
+    public GraphData getData(){
+        return data;
     }
-
-    public static int getY1()
-    {
-        return y1;
-    }
-
-    public void setY1(int y1) {
-
-        this.y1 = y1;
-    }
-
-    public static int getX2() {
-
-        return x2;
-    }
-
-    public void setX2(int x2)
-    {
-        this.x2 = x2;
-    }
-
-    public static int getY2()
-    {
-        return y2;
-    }
-
-    public void setY2(int y2)
-    {
-        this.y2 = y2;
-    }*/
 }

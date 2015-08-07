@@ -17,11 +17,10 @@ public class ScaleActivity extends Activity {
 
 
     // Random x and y values that will be used until linked with other activity
-    GraphData data;
-    int x1 = data.getX1();
-    int x2 = data.getX2();
-    int y1 = data.getY1();
-    int y2 = data.getY2();
+    int x1;
+    int x2;
+    int y1;
+    int y2;
     private double scale;
     boolean Meters;
     boolean English;
@@ -32,6 +31,11 @@ public class ScaleActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scale);
+
+        x1 = getIntent().getIntExtra("x1", 0);
+        x2 = getIntent().getIntExtra("x2", 0);
+        y1 = getIntent().getIntExtra("y1",0);
+        y2 = getIntent().getIntExtra("y2",0);
         String vidPath = getIntent().getStringExtra("vidPath");
         final RadioButton metersbutton = (RadioButton)findViewById(R.id.radioButton_meters);
         final RadioButton Englishbutton = (RadioButton)findViewById(R.id.radioButton_English);
@@ -133,7 +137,7 @@ public class ScaleActivity extends Activity {
                 }
             }
         });
-                    data.setScale(scale);
+                   // data.setScale(scale);
 
     }
     /*

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.renderscript.Sampler;
 import android.view.Display;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.MediaController;
@@ -22,12 +23,26 @@ public class  MainActivity extends Activity {
     VideoView myVideoView;
     int count = 0;
 
+    GraphData data;
+    ScaleView test;
+    int x1;
+    int x2;
+    int y1;
+    int y2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.openGallery();
+        test = (ScaleView)findViewById(R.id.scaleView);
+
+        data = test.getData();
+        x1 = data.getX1();
+        x2 = data.getX2();
+        y1 = data.getY1();
+        y2 = data.getY2();
 
 
     }
@@ -64,6 +79,10 @@ public class  MainActivity extends Activity {
                     @Override
                     public void onClick(View View) {
                         Intent intent = new Intent(getApplicationContext(), ScaleActivity.class);
+                        intent.putExtra("x1",x1);
+                        intent.putExtra("x2",x2);
+                        intent.putExtra("y1",y1);
+                        intent.putExtra("y2",y2);
                         intent.putExtra("vidPath", vidPathString);
                         startActivity(intent);
                     }
@@ -88,6 +107,7 @@ public class  MainActivity extends Activity {
             Toast.makeText(this, "There was an error", Toast.LENGTH_LONG)
                     .show();
         }
+
 
 
     }
