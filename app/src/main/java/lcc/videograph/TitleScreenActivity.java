@@ -33,7 +33,7 @@ public class TitleScreenActivity extends ActionBarActivity {
             public void onClick(View v) {
                 //start.setShadowLayer(10, 5, 5, Color.BLACK);
 
-                Intent startIntent = new Intent(TitleScreenActivity.this, Guides2Activity.class);
+                Intent startIntent = new Intent(TitleScreenActivity.this, HomeActivity.class);
                 startActivity(startIntent);
             }
         });

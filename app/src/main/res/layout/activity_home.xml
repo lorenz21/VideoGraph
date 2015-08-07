@@ -1,15 +1,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:orientation="vertical"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="lcc.videograph.HomeActivity"
-    android:background="@color/background">
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
@@ -17,7 +22,8 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Record"
         android:id="@+id/textView_record"
-        android:clickable="true" />
+        android:clickable="true"
+        android:layout_gravity="center_horizontal" />
 
     <TextView
         android:paddingBottom="20dp"
@@ -25,14 +31,16 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="enter brief description here"
-        android:id="@+id/textView_recordInfo" />
+        android:id="@+id/textView_recordInfo"
+        android:layout_gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Plot Points"
-        android:id="@+id/textView_plotPoints" />
+        android:id="@+id/textView_plotPoints"
+        android:layout_gravity="center_horizontal" />
 
     <TextView
         android:paddingBottom="20dp"
@@ -40,20 +48,23 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="enter brief description here"
-        android:id="@+id/textView_plotInfo" />
+        android:id="@+id/textView_plotInfo"
+        android:layout_gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Review"
-        android:id="@+id/textView_review" />
+        android:id="@+id/textView_review"
+        android:layout_gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="enter brief description here"
-        android:id="@+id/textView_reviewInfo" />
+        android:id="@+id/textView_reviewInfo"
+        android:layout_gravity="center_horizontal" />
 
 </LinearLayout>

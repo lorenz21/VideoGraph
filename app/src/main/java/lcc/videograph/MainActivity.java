@@ -81,11 +81,11 @@ public class  MainActivity extends Activity {
                 myVideoView.start();
 
             } else {
-                Toast.makeText(this, "You haven't picked Image",
+                Toast.makeText(this, "You haven't selected a video",
                         Toast.LENGTH_LONG).show();
             }
         } catch (Exception e) {
-            Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG)
+            Toast.makeText(this, "There was an error", Toast.LENGTH_LONG)
                     .show();
         }
 
