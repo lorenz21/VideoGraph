@@ -27,7 +27,6 @@ public class ScaleActivity extends Activity {
     boolean English;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
