@@ -22,8 +22,6 @@ public class ScaleView extends View {
     private static int x1, y1, x2, y2, xCircle, yCircle;
     int count = 0;
     private Paint paint = new Paint();
-    SharedPreferences pref = getContext().getSharedPreferences("MyPref",Context.MODE_PRIVATE);
-    SharedPreferences.Editor editor = pref.edit();
 
 
     public ScaleView(Context context) {
@@ -52,8 +50,13 @@ public class ScaleView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         canvas.drawLine(x1, y1, x2, y2, paint);
-        canvas.drawCircle(xCircle, yCircle, 15, paint);
-        canvas.drawCircle(x2, y2, 15, paint);
+        if(count == 1) {
+            canvas.drawCircle(xCircle, yCircle, 15, paint);
+        }
+        if(count == 2) {
+            canvas.drawCircle(xCircle, yCircle, 15, paint);
+            canvas.drawCircle(x2, y2, 15, paint);
+        }
     }
 
     @Override

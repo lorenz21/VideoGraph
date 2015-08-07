@@ -74,10 +74,8 @@ public class DrawView extends View {
             double xTouch = (double)(touchX);
             double yTouch = (double)(touchY);
             circlePoints.add(new Point(Math.round(touchX), Math.round(touchY)));
-            //xTap.add(scale * touchX);
-            //yTap.add(scale * (touchY));
-            //String points = String.valueOf(circlePoints);
-            //Log.d("DrawView", points);
+            xTap.add(scale * touchX);
+            yTap.add(scale * (touchY));
             //Used to get() the current time in video.
             int currentTime = (Integer)getTag();
             double dTime = (double)(currentTime);
