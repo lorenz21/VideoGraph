@@ -24,7 +24,7 @@ public class ScaleView extends View {
     private int xCircle, yCircle;
     int count = 0;
     private Paint paint = new Paint();
-    GraphData data;
+    //GraphData data;
 
 
     public ScaleView(Context context) {
@@ -79,12 +79,12 @@ public class ScaleView extends View {
                 y2 = yCorr.get(1);
 
             }
-            if(data != null){
+                /*
                 data.setX1(x1);
                 data.setX2(x2);
                 data.setY1(y1);
                 data.setY2(y2);
-            }
+                */
             postInvalidate();
             return true;
 

@@ -23,10 +23,10 @@ public class DrawView extends View {
     private Paint paint = new Paint();
     // Store circles to draw each time the user touches down
     private  List<Point> circlePoints = new ArrayList<Point>();
-    private  List<Double> time = new ArrayList<Double>();
-    private  List<Double> xTap = new ArrayList<Double>();
-    private  List<Double> yTap = new ArrayList<Double>();
-    private double scale = data.getScale();
+    private  static List<Double> time = new ArrayList<Double>();
+    private  static List<Double> xTap = new ArrayList<Double>();
+    private  static List<Double> yTap = new ArrayList<Double>();
+    private double scale = ScaleActivity.getScale();
 
 
 
@@ -81,9 +81,9 @@ public class DrawView extends View {
             int currentTime = (Integer)getTag();
             double dTime = (double)(currentTime);
             time.add(dTime);
-            data.setTime(time);
-            data.setXtap(xTap);
-            data.setYtap(yTap);
+            //data.setTime(time);
+            //data.setXtap(xTap);
+            //data.setYtap(yTap);
             String cT = String.valueOf(time);
             Log.d("timeTest", cT);
 
@@ -101,7 +101,7 @@ public class DrawView extends View {
         return false;
     }
 
-    /*
+
     public static List<Double> getTime() {
 
         return time;
@@ -129,6 +129,6 @@ public class DrawView extends View {
     public static void setyTap(List<Double> yTap) {
 
         DrawView.yTap = yTap;
-    }*/
+    }
 }
 

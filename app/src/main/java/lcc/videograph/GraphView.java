@@ -20,8 +20,8 @@ import java.util.List;
  */
 public class GraphView extends SurfaceView {
     GraphData data;
-    List<Double> time = data.getTime();
-    List<Double> xValues = data.getXtap();
+    List<Double> time = DrawView.getTime();
+    List<Double> xValues = DrawView.getxTap();
 
 
 
