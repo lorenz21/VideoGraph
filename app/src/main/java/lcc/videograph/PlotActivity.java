@@ -58,6 +58,9 @@ public class PlotActivity extends Activity {
         myVideoView.setOnErrorListener(myVideoViewErrorListener);
         //Sets focus on the widget
         myVideoView.requestFocus();
+        TextView runTime = (TextView) findViewById(R.id.time_text);
+        runTime.setText(Integer.toString(myVideoView.getCurrentPosition()) + " (ms)");
+        myVideoView.seekTo(count);
         //Initialize seekbutton to be used to go frame-by-frame in video.
         ImageButton buttonFwdSeek = (ImageButton)findViewById(R.id.seek_fwd);
         //Set's OnClickListener to know when the button had been clicked, then executes the code.
@@ -72,12 +75,13 @@ public class PlotActivity extends Activity {
                     currentTime = count;
                     //
                     drawInstance.setTag(currentTime);
-                    myVideoView.seekTo(count);
-                    //dnum = dnum + 33.33;
-                    //count = (int)Math.round(dnum);
                     count = myVideoView.getCurrentPosition() + 250;
                     TextView runTime = (TextView) findViewById(R.id.time_text);
                     runTime.setText(Integer.toString(myVideoView.getCurrentPosition()) + " (ms)");
+                    myVideoView.seekTo(count);
+                    //dnum = dnum + 33.33;
+                    //count = (int)Math.round(dnum);
+
 
                 }
 

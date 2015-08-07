@@ -57,20 +57,20 @@
     <EditText
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:inputType="number"
         android:ems="10"
         android:id="@+id/editText_feet"
         android:textColor="#ffffffff"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        android:inputType="number" />
 
     <EditText
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:inputType="number"
         android:ems="10"
         android:id="@+id/editText_inches"
         android:textColor="#ffffffff"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        android:inputType="number" />
 
     <TextView
         android:layout_width="wrap_content"

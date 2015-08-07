@@ -25,7 +25,7 @@ public class DrawView extends View {
     private static List<Double> time = new ArrayList<Double>();
     private static List<Double> xTap = new ArrayList<Double>();
     private static List<Double> yTap = new ArrayList<Double>();
-    private static double scale = ScaleActivity.getScale();
+    //private static double scale = ScaleActivity.getScale();
 
 
 
@@ -74,8 +74,8 @@ public class DrawView extends View {
             double xTouch = (double)(touchX);
             double yTouch = (double)(touchY);
             circlePoints.add(new Point(Math.round(touchX), Math.round(touchY)));
-            xTap.add(scale * touchX);
-            yTap.add(scale * (touchY));
+            //xTap.add(scale * touchX);
+            //yTap.add(scale * (touchY));
             //String points = String.valueOf(circlePoints);
             //Log.d("DrawView", points);
             //Used to get() the current time in video.
