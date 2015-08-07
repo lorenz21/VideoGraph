@@ -100,7 +100,6 @@ public class DrawView extends View {
 
         return false;
     }
-
     /*
     public static List<Double> getTime() {
 
