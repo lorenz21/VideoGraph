@@ -92,7 +92,6 @@ public class ScaleView extends View {
         return false;
 
     }
-
     /*
     public static int getX1() {
 
