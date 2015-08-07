@@ -6,6 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -24,7 +25,7 @@ public class ScaleView extends View {
     private int xCircle, yCircle;
     int count = 0;
     private Paint paint = new Paint();
-    //GraphData data;
+    GraphData data;
 
 
     public ScaleView(Context context) {
@@ -77,14 +78,20 @@ public class ScaleView extends View {
                 y1 = yCorr.get(0);
                 x2 = xCorr.get(1);
                 y2 = yCorr.get(1);
+                data = new GraphData(x1, x2, y1, y2);
 
-            }
                 /*
                 data.setX1(x1);
                 data.setX2(x2);
                 data.setY1(y1);
                 data.setY2(y2);
                 */
+                String x1Value = String.valueOf(data.getX1());
+                Log.d("TestX", x1Value);
+
+            }
+
+
             postInvalidate();
             return true;
 

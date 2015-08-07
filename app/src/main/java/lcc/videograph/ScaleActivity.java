@@ -99,26 +99,26 @@ public class ScaleActivity extends Activity {
         scaleIntent.putExtra("vidPath",vidPath);
 
 
-        nextText.setOnClickListener(new View.OnClickListener(){
+        nextText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if (Meters == true){
+                if (Meters == true) {
 
                     // Getting and parsing the value typed in the text box
-                    String si =  meterstext.getText().toString();
+                    String si = meterstext.getText().toString();
                     double meterEntry = Double.parseDouble(si);
 
                     // This is where the scale is created from the typed value and pixel difference
-                    scale = meterEntry/pix;
-                    scaleIntent.putExtra("Scale",scale);
+                    scale = meterEntry / pix;
+                    scaleIntent.putExtra("Scale", scale);
                     startActivity(scaleIntent);
 
                     //String tester = Double.toString(scale);
                     //test.setText(tester);
 
                 }
-                if(English == true){
+                if (English == true) {
 
                     // Getting and parsing the values typed in the text boxes
                     String ft = feettext.getText().toString();
@@ -127,7 +127,7 @@ public class ScaleActivity extends Activity {
                     double inchesEntry = Double.parseDouble(in);
 
                     // This is where the scale is created and converted into meters per pixel
-                    scale = (feetEntry + (inchesEntry/12))/(m * pix);
+                    scale = (feetEntry + (inchesEntry / 12)) / (m * pix);
                     scaleIntent.putExtra("Scale", scale);
                     startActivity(scaleIntent);
                 }
