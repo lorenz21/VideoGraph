@@ -24,7 +24,8 @@ public class ScaleView extends View {
     private int xCircle, yCircle;
     int count = 0;
     private Paint paint = new Paint();
-    GraphData data = new GraphData(5, 5, 5, 5);
+    GraphData data;
+
 
 
 
@@ -78,24 +79,17 @@ public class ScaleView extends View {
                 y1 = yCorr.get(0);
                 x2 = xCorr.get(1);
                 y2 = yCorr.get(1);
-                //data = new GraphData(x1, x2, y1, y2);
-
-                /*
-                data.setX1(x1);
-                data.setX2(x2);
-                data.setY1(y1);
-                data.setY2(y2);
-                */
-                String x1Value = String.valueOf(data.getX1());
-                Log.d("TestX", x1Value);
 
             }
-
+            data = new GraphData(x1, x2, y1, y2);
+            String check = String.valueOf(data.getX1());
+            Log.d("x1Scale", check);
 
             postInvalidate();
             return true;
 
         }
+
         return false;
 
 
@@ -104,4 +98,8 @@ public class ScaleView extends View {
     public GraphData getData(){
         return data;
     }
+    /*public int getX1(){
+        return x1;
+    }*/
+
 }
