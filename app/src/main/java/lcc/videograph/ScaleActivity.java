@@ -32,8 +32,8 @@ public class ScaleActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scale);
 
-        x1 = getIntent().getIntExtra("x1", 0);
-        x2 = getIntent().getIntExtra("x2", 0);
+        x1 = getIntent().getIntExtra("x1",0);
+        x2 = getIntent().getIntExtra("x2",0);
         y1 = getIntent().getIntExtra("y1",0);
         y2 = getIntent().getIntExtra("y2",0);
         String vidPath = getIntent().getStringExtra("vidPath");
@@ -43,7 +43,6 @@ public class ScaleActivity extends Activity {
         final EditText feettext = (EditText)findViewById(R.id.editText_feet);
         final EditText inchestext = (EditText)findViewById(R.id.editText_inches);
         final TextView nextText = (TextView)findViewById(R.id.nextText);
-        //final TextView test = (TextView)findViewById(R.id.testView);
 
 
 
@@ -116,6 +115,9 @@ public class ScaleActivity extends Activity {
                     // This is where the scale is created from the typed value and pixel difference
                     scale = meterEntry / pix;
                     scaleIntent.putExtra("Scale", scale);
+                    String scaleTest = String.valueOf(scale);
+                    Log.d("scaleNum", scaleTest);
+
                     startActivity(scaleIntent);
 
                     //String tester = Double.toString(scale);
@@ -137,15 +139,8 @@ public class ScaleActivity extends Activity {
                 }
             }
         });
-                   // data.setScale(scale);
+
 
     }
-    /*
-    public static double getScale() {
-        return scale;
-    }
 
-    public void setScale(double scale) {
-        this.scale = scale;
-    }*/
 }

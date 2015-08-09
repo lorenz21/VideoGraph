@@ -17,15 +17,13 @@ import java.util.ArrayList;
 public class ScaleView extends View {
     ArrayList<Integer> xCorr = new ArrayList<Integer>();
     ArrayList<Integer> yCorr = new ArrayList<Integer>();
-    private int x1 = 0;
-    private int x2 = 0;
-    private int y1 = 0;
-    private int y2 = 0;
+    int x1 = 0;
+    int x2 = 0;
+    int y1 = 0;
+    int y2 = 0;
     private int xCircle, yCircle;
     int count = 0;
     private Paint paint = new Paint();
-    GraphData data;
-
 
 
 
@@ -67,8 +65,8 @@ public class ScaleView extends View {
     @Override
     public boolean onTouchEvent(MotionEvent motionEvent) {
         if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
-            float touchX = motionEvent.getX();
-            float touchY = motionEvent.getY();
+            float touchX = motionEvent.getRawX();
+            float touchY = motionEvent.getRawY();
             xCorr.add(new Integer(Math.round(touchX)));
             yCorr.add(new Integer(Math.round(touchY)));
             xCircle = xCorr.get(0);
@@ -81,9 +79,7 @@ public class ScaleView extends View {
                 y2 = yCorr.get(1);
 
             }
-            data = new GraphData(x1, x2, y1, y2);
-            String check = String.valueOf(data.getX1());
-            Log.d("x1Scale", check);
+
 
             postInvalidate();
             return true;
@@ -92,14 +88,6 @@ public class ScaleView extends View {
 
         return false;
 
-
     }
-
-    public GraphData getData(){
-        return data;
-    }
-    /*public int getX1(){
-        return x1;
-    }*/
 
 }

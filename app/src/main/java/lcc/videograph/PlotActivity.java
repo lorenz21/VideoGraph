@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -31,6 +32,13 @@ public class PlotActivity extends Activity {
     int back = 0;
     double dnum = 0.0;
     int currentTime;
+    float touchX, touchY;
+    double dTouchX, dTouchY;
+    double dTime;
+    private  List<Double> time = new ArrayList<Double>();
+    private  List<Double> xTap = new ArrayList<Double>();
+    private  List<Double> yTap = new ArrayList<Double>();
+    double scale;
 
 
     @Override
@@ -38,7 +46,7 @@ public class PlotActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plot);
         String vidPath = getIntent().getStringExtra("vidPath");
-        Double scale = getIntent().getDoubleExtra("Scale", 0);
+        scale = getIntent().getDoubleExtra("Scale", 0);
         String timeTest = String.valueOf(scale);
         Log.d("MyTag4", timeTest);
         final View drawInstance = (View) findViewById(R.id.drawView);
@@ -150,13 +158,38 @@ public class PlotActivity extends Activity {
         ImageButton graphButton = (ImageButton) findViewById(R.id.graph_button);
         graphButton.setOnClickListener(new View.OnClickListener(){
             public void onClick (View view){
+                double tPoints[] = new double[time.size()];
+                for(int i = 0; i < time.size(); i++){
+                    tPoints[i] = time.get(i);
+                }
+                double xPoints[] = new double[xTap.size()];
+                for(int i = 0; i < xTap.size(); i++){
+                    xPoints[i] = xTap.get(i);
+                }
+
 
                 Intent graphIntent = new Intent(getApplicationContext(), GraphingActivity.class);
+                graphIntent.putExtra("tPoints",tPoints);
+                graphIntent.putExtra("xPoints",xPoints);
                 startActivity(graphIntent);
             }
         });
 
 
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent PlotEvent) {
+        if (PlotEvent.getAction() == MotionEvent.ACTION_UP){
+            double xTouch = (double)(touchX);
+            double yTouch = (double)(touchY);
+            xTap.add(scale * touchX);
+            yTap.add(scale * touchY);
+            double dTime = (double)(currentTime);
+            time.add(dTime);
+
+        }
+        return super.onTouchEvent(PlotEvent);
     }
 
     MediaPlayer.OnCompletionListener myVideoViewCompletionListener =

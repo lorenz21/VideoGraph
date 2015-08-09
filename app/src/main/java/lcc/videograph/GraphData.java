@@ -81,6 +81,7 @@ public int getX1() {
 
 //set method for x2
 public void setX2(int x2) {
+
         this.x2 = x2;
         }
 

@@ -24,9 +24,9 @@ public class DrawView extends View {
     // Store circles to draw each time the user touches down
     private  List<Point> circlePoints = new ArrayList<Point>();
     private  List<Double> time = new ArrayList<Double>();
-    private  List<Double> xTap = new ArrayList<Double>();
-    private  List<Double> yTap = new ArrayList<Double>();
-    private double scale = data.getScale();
+    //private  List<Double> xTap = new ArrayList<Double>();
+    //private  List<Double> yTap = new ArrayList<Double>();
+    //private double scale = data.getScale();
 
 
 
@@ -75,8 +75,8 @@ public class DrawView extends View {
             double xTouch = (double)(touchX);
             double yTouch = (double)(touchY);
             circlePoints.add(new Point(Math.round(touchX), Math.round(touchY)));
-            xTap.add(scale * touchX);
-            yTap.add(scale * (touchY));
+            //xTap.add(touchX);
+            //yTap.add(touchY);
             //Used to get() the current time in video.
             int currentTime = (Integer)getTag();
             double dTime = (double)(currentTime);
@@ -87,11 +87,11 @@ public class DrawView extends View {
             String cT = String.valueOf(time);
             Log.d("timeTest", cT);
 
-            String xTapTest = String.valueOf(xTap);
-            Log.d("xValues", xTapTest);
+           // String xTapTest = String.valueOf(xTap);
+            //Log.d("xValues", xTapTest);
 
-            String yTapTest = String.valueOf(yTap);
-            Log.d("yValues", yTapTest);
+            //String yTapTest = String.valueOf(yTap);
+            //Log.d("yValues", yTapTest);
             // indicate view should be redrawn
             postInvalidate();
             return true;
@@ -101,34 +101,5 @@ public class DrawView extends View {
         return false;
     }
 
-    /*
-    public static List<Double> getTime() {
-
-        return time;
-    }
-
-    public static void setTime(List<Double> time) {
-
-        DrawView.time = time;
-    }
-
-    public static List<Double> getxTap() {
-        return xTap;
-    }
-
-    public static void setxTap(List<Double> xTap) {
-
-        DrawView.xTap = xTap;
-    }
-
-    public static List<Double> getyTap() {
-
-        return yTap;
-    }
-
-    public static void setyTap(List<Double> yTap) {
-
-        DrawView.yTap = yTap;
-    }*/
 }
 

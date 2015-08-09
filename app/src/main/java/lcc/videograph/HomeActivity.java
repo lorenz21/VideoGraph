@@ -38,7 +38,7 @@ private void plotButton(){
         plot.setOnClickListener(new View.OnClickListener() {
 @Override
 public void onClick(View view) {
-        Intent intentToChangeActivity = new Intent(HomeActivity.this, MainActivity.class);
+        Intent intentToChangeActivity = new Intent(HomeActivity.this, ScaleVideo.class);
         startActivity(intentToChangeActivity);
         }
         });
