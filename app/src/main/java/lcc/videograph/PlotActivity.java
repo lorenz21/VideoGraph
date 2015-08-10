@@ -29,11 +29,11 @@ public class PlotActivity extends Activity {
     VideoView myVideoView;
     //Variable that is used to increment a number and frames.
     int count = 0;
-    int back = 0;
+    int clickCount = 0;
     double dnum = 0.0;
     int currentTime;
     float touchX, touchY;
-    double dTouchX, dTouchY;
+    double xTouch, yTouch;
     double dTime;
     private  List<Double> time = new ArrayList<Double>();
     private  List<Double> xTap = new ArrayList<Double>();
@@ -49,7 +49,6 @@ public class PlotActivity extends Activity {
         scale = getIntent().getDoubleExtra("Scale", 0);
         String timeTest = String.valueOf(scale);
         Log.d("MyTag4", timeTest);
-        final View drawInstance = (View) findViewById(R.id.drawView);
         //Initializing videoView to link this java activity to the .xml layout.
         myVideoView = (VideoView) findViewById(R.id.videoView2);
         //Uniform Resource Identifier(Uri) is used as an address to identify things
@@ -82,7 +81,6 @@ public class PlotActivity extends Activity {
                     //Which is 1/10 of a sec or 100 milliseconds.
                     currentTime = count;
                     //
-                    drawInstance.setTag(currentTime);
                     count = myVideoView.getCurrentPosition() + 250;
                     TextView runTime = (TextView) findViewById(R.id.time_text);
                     runTime.setText(Integer.toString(myVideoView.getCurrentPosition()) + " (ms)");
@@ -103,7 +101,6 @@ public class PlotActivity extends Activity {
                     count = myVideoView.getCurrentPosition() - 250;
                     //
                     currentTime = count;
-                    drawInstance.setTag(currentTime);
                     myVideoView.seekTo(count
                     );
                     TextView runTime = (TextView)findViewById(R.id.time_text);
@@ -120,7 +117,6 @@ public class PlotActivity extends Activity {
                     count = myVideoView.getCurrentPosition() - 1000;
                     //
                     currentTime = count;
-                    drawInstance.setTag(currentTime);
                     myVideoView.seekTo(count
                     );
                     TextView runTime = (TextView)findViewById(R.id.time_text);
@@ -135,7 +131,6 @@ public class PlotActivity extends Activity {
                 if(myVideoView.getCurrentPosition() < myVideoView.getDuration()) {
                     //Keeps a count and seeks video to specified frame.Which is 1 sec, let's user get through video faster.
                     currentTime = count;
-                    drawInstance.setTag(currentTime);
                     myVideoView.seekTo(count);
                     count = myVideoView.getCurrentPosition() + 1000;
                     TextView runTime = (TextView)findViewById(R.id.time_text);
@@ -158,20 +153,24 @@ public class PlotActivity extends Activity {
         ImageButton graphButton = (ImageButton) findViewById(R.id.graph_button);
         graphButton.setOnClickListener(new View.OnClickListener(){
             public void onClick (View view){
-                double tPoints[] = new double[time.size()];
-                for(int i = 0; i < time.size(); i++){
-                    tPoints[i] = time.get(i);
-                }
-                double xPoints[] = new double[xTap.size()];
-                for(int i = 0; i < xTap.size(); i++){
-                    xPoints[i] = xTap.get(i);
-                }
+                if(clickCount >= 3) {
+                    double tPoints[] = new double[time.size()];
+                    for (int i = 0; i < time.size(); i++) {
+                        tPoints[i] = time.get(i);
+                    }
+                    double xPoints[] = new double[xTap.size()];
+                    for (int i = 0; i < xTap.size(); i++) {
+                        xPoints[i] = xTap.get(i);
+                    }
 
-
-                Intent graphIntent = new Intent(getApplicationContext(), GraphingActivity.class);
-                graphIntent.putExtra("tPoints",tPoints);
-                graphIntent.putExtra("xPoints",xPoints);
-                startActivity(graphIntent);
+                    Intent graphIntent = new Intent(getApplicationContext(), GraphingActivity.class);
+                    graphIntent.putExtra("tPoints", tPoints);
+                    graphIntent.putExtra("xPoints", xPoints);
+                    startActivity(graphIntent);
+                }
+                else{
+                    Toast.makeText(PlotActivity.this, "plot more points", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -181,13 +180,17 @@ public class PlotActivity extends Activity {
     @Override
     public boolean onTouchEvent(MotionEvent PlotEvent) {
         if (PlotEvent.getAction() == MotionEvent.ACTION_UP){
-            double xTouch = (double)(touchX);
-            double yTouch = (double)(touchY);
-            xTap.add(scale * touchX);
-            yTap.add(scale * touchY);
-            double dTime = (double)(currentTime);
+            clickCount = clickCount +1;
+            touchX = PlotEvent.getX();
+            touchY = PlotEvent.getY();
+            xTouch = (double)(touchX);
+            yTouch = (double)(touchY);
+            xTap.add(scale * xTouch);
+            yTap.add(scale * yTouch);
+            dTime = (double)(currentTime);
             time.add(dTime);
-
+            String xTest3 = String.valueOf(time);
+            Log.d("x3", xTest3);
         }
         return super.onTouchEvent(PlotEvent);
     }

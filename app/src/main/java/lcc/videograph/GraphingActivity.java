@@ -24,6 +24,12 @@ public class GraphingActivity extends Activity {
         double [] xPoints = getIntent().getDoubleArrayExtra("xPoints");
         graphView.setTPoints(tPoints);
         graphView.setXpoints(xPoints);
+        String xTest1 = String.valueOf(tPoints[0]);
+        Log.d("x1", xTest1);
+        String xTest2 = String.valueOf(tPoints[1]);
+        Log.d("x2", xTest2);
+        String xTest3 = String.valueOf(tPoints[2]);
+        Log.d("x3", xTest3);
 
         super.onResume();
     }

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ScaleActivity extends Activity {
 
@@ -107,35 +109,50 @@ public class ScaleActivity extends Activity {
             public void onClick(View v) {
 
                 if (Meters == true) {
-
-                    // Getting and parsing the value typed in the text box
                     String si = meterstext.getText().toString();
-                    double meterEntry = Double.parseDouble(si);
+                    if(TextUtils.isEmpty(si)) {
+                        meterstext.setError("Enter an amount in 'Meter's'");
+                        return;
+                        //Toast.makeText(ScaleActivity.this, "Enter 'metere's'", Toast.LENGTH_SHORT).show();
+                   }
+                    else {
+                        // Getting and parsing the value typed in the text box
+                        double meterEntry = Double.parseDouble(si);
+                        // This is where the scale is created from the typed value and pixel difference
+                        scale = meterEntry / pix;
+                        scaleIntent.putExtra("Scale", scale);
+                        String scaleTest = String.valueOf(scale);
+                        Log.d("scaleNum", scaleTest);
 
-                    // This is where the scale is created from the typed value and pixel difference
-                    scale = meterEntry / pix;
-                    scaleIntent.putExtra("Scale", scale);
-                    String scaleTest = String.valueOf(scale);
-                    Log.d("scaleNum", scaleTest);
+                        startActivity(scaleIntent);
 
-                    startActivity(scaleIntent);
-
-                    //String tester = Double.toString(scale);
-                    //test.setText(tester);
-
+                        //String tester = Double.toString(scale);
+                        //test.setText(tester);
+                   }
                 }
                 if (English == true) {
-
-                    // Getting and parsing the values typed in the text boxes
                     String ft = feettext.getText().toString();
                     String in = inchestext.getText().toString();
-                    double feetEntry = Double.parseDouble(ft);
-                    double inchesEntry = Double.parseDouble(in);
+                    if(TextUtils.isEmpty(ft)) {
+                        feettext.setError("Enter an amount in 'Feet'");
+                        return;
+                    }
+                    else if(TextUtils.isEmpty(in)){
+                        inchestext.setError("Enter an amount in 'Inches'");
+                        return;
+                    }
+                    else{
+                        Toast.makeText(ScaleActivity.this, "Enter ft/in'", Toast.LENGTH_SHORT).show();
+                        // Getting and parsing the values typed in the text boxes
 
-                    // This is where the scale is created and converted into meters per pixel
-                    scale = (feetEntry + (inchesEntry / 12)) / (m * pix);
-                    scaleIntent.putExtra("Scale", scale);
-                    startActivity(scaleIntent);
+                        double feetEntry = Double.parseDouble(ft);
+                        double inchesEntry = Double.parseDouble(in);
+
+                        // This is where the scale is created and converted into meters per pixel
+                        scale = (feetEntry + (inchesEntry / 12)) / (m * pix);
+                        scaleIntent.putExtra("Scale", scale);
+                        startActivity(scaleIntent);
+                    }
                 }
             }
         });

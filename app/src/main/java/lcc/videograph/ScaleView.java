@@ -65,8 +65,8 @@ public class ScaleView extends View {
     @Override
     public boolean onTouchEvent(MotionEvent motionEvent) {
         if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
-            float touchX = motionEvent.getRawX();
-            float touchY = motionEvent.getRawY();
+            float touchX = motionEvent.getX();
+            float touchY = motionEvent.getY();
             xCorr.add(new Integer(Math.round(touchX)));
             yCorr.add(new Integer(Math.round(touchY)));
             xCircle = xCorr.get(0);
