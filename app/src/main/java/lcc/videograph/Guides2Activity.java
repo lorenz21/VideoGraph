@@ -32,7 +32,7 @@ public class Guides2Activity extends ActionBarActivity {
         rollingLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent rollingIntent = new Intent(Guides2Activity.this, TitleScreenActivity.class);
+                Intent rollingIntent = new Intent(Guides2Activity.this, RollingMaterialsActivity.class);
                 startActivity(rollingIntent);
             }
         });
