@@ -45,6 +45,9 @@ public class ScaleActivity extends Activity {
         final EditText feettext = (EditText)findViewById(R.id.editText_feet);
         final EditText inchestext = (EditText)findViewById(R.id.editText_inches);
         final TextView nextText = (TextView)findViewById(R.id.nextText);
+        final TextView meterunit = (TextView)findViewById(R.id.meterUnits);
+        final TextView feetunit = (TextView)findViewById(R.id.feetUnits);
+        final TextView inchesunit = (TextView)findViewById(R.id.inchesUnits);
 
 
 
@@ -66,11 +69,16 @@ public class ScaleActivity extends Activity {
 
                     // Makes the text box visible and usable
                     meterstext.setVisibility(View.VISIBLE);
-                    feettext.setVisibility(View.INVISIBLE);
-                    inchestext.setVisibility(View.INVISIBLE);
+                    meterunit.setVisibility(View.VISIBLE);
 
                     Meters = true;
                     English = false;
+
+                    // Gets rid of opposite text being selected
+                    feettext.setVisibility(View.INVISIBLE);
+                    inchestext.setVisibility(View.INVISIBLE);
+                    feetunit.setVisibility(View.INVISIBLE);
+                    inchesunit.setVisibility(View.INVISIBLE);
                 }
 
 
@@ -87,13 +95,17 @@ public class ScaleActivity extends Activity {
                 if (Englishbutton.isChecked() == true) {
 
                     // Makes the text boxes visible and usable
-                    meterstext.setVisibility(View.INVISIBLE);
                     feettext.setVisibility(View.VISIBLE);
                     inchestext.setVisibility(View.VISIBLE);
+                    feetunit.setVisibility(View.VISIBLE);
+                    inchesunit.setVisibility(View.VISIBLE);
 
                     English = true;
                     Meters = false;
 
+                    // Gets rid of opposite text being selected
+                    meterstext.setVisibility(View.INVISIBLE);
+                    meterunit.setVisibility(View.INVISIBLE);
 
                 }
             }

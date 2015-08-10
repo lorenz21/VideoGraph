@@ -44,33 +44,87 @@
             android:clickable="true" />
     </RadioGroup>
 
-    <EditText
-        android:layout_width="150dp"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:ems="10"
-        android:id="@+id/editText_meters"
-        android:layout_marginTop="50dp"
-        android:textColor="#ffffffff"
-        android:visibility="invisible" />
+        android:layout_gravity="bottom">
 
-    <EditText
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:id="@+id/editText_feet"
-        android:textColor="#ffffffff"
-        android:visibility="invisible"
-        android:inputType="number" />
+        <EditText
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/editText_meters"
+            android:layout_marginTop="50dp"
+            android:textColor="#ffffffff"
+            android:visibility="invisible" />
 
-    <EditText
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:id="@+id/editText_inches"
-        android:textColor="#ffffffff"
-        android:visibility="invisible"
-        android:inputType="number" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="m"
+            android:id="@+id/meterUnits"
+            android:layout_gravity="bottom"
+            android:textColor="#ffffffff"
+            android:visibility="invisible"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/editText_feet"
+            android:textColor="#ffffffff"
+            android:visibility="invisible"
+            android:layout_gravity="bottom|center_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="ft"
+            android:id="@+id/feetUnits"
+            android:layout_gravity="bottom"
+            android:textColor="#ffffffff"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/editText_inches"
+            android:textColor="#ffffffff"
+            android:visibility="invisible"
+            android:layout_gravity="bottom" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="in"
+            android:id="@+id/inchesUnits"
+            android:layout_gravity="bottom"
+            android:textColor="#ffffffff"
+            android:visibility="invisible" />
+    </LinearLayout>
+
 
     <TextView
         android:layout_width="wrap_content"
