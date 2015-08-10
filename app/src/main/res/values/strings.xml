@@ -13,7 +13,8 @@
     <string name="nextText">Next</string>
     <string name="title_activity_graph">GraphActivity</string>
     <string name="title_activity_title_screen">TitleScreenActivity</string>
-    <string name="title_activity_guides2">Guides2Activity</string>
-    <string name="title_activity_rolling_materials">RollingMaterialsActivity</string>
-    <string name="title_activity_rolling_setup">RollingSetupActivity</string>
+    <string name="title_activity_guides2">Guides</string>
+    <string name="title_activity_rolling_materials">Rolling: Materials</string>
+    <string name="title_activity_rolling_setup">Rolling: Setup</string>
+    <string name="title_activity_kinetic_materials">Kinetic Friction: Materials</string>
 </resources>

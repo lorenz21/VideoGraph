@@ -47,6 +47,10 @@
             android:name=".RollingSetupActivity"
             android:label="@string/title_activity_rolling_setup" >
         </activity>
+        <activity
+            android:name=".KineticMaterialsActivity"
+            android:label="@string/title_activity_kinetic_materials" >
+        </activity>
     </application>
 
 </manifest>

@@ -65,7 +65,7 @@ public class Guides2Activity extends ActionBarActivity {
         kineticLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent kineticIntent = new Intent(Guides2Activity.this, TitleScreenActivity.class);
+                Intent kineticIntent = new Intent(Guides2Activity.this, KineticMaterialsActivity.class);
                 startActivity(kineticIntent);
             }
         });
