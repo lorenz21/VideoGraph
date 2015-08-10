@@ -14,10 +14,10 @@
         android:layout_height="550dp"
         android:id="@+id/videoView2"
         android:layout_gravity="center" />
-    <lcc.videograph.DrawView
+    <lcc.videograph.PlotView
         android:layout_width="match_parent"
         android:layout_height="550dp"
-        android:id="@+id/drawView"/>
+        android:id="@+id/plotView" />
 
         <TextView
         android:layout_width="60dp"
