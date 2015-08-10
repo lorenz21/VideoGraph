@@ -92,8 +92,8 @@ public class ScaleVideo extends Activity {
     @Override
     public boolean onTouchEvent(MotionEvent ScaleEvent) {
         if(ScaleEvent.getAction() == MotionEvent.ACTION_UP){
-            touchX = ScaleEvent.getRawX();
-            touchY = ScaleEvent.getRawY();
+            touchX = ScaleEvent.getX();
+            touchY = ScaleEvent.getY();
             xCorr.add(new Integer(Math.round(touchX)));
             yCorr.add(new Integer(Math.round(touchY)));
             count = count + 1;
