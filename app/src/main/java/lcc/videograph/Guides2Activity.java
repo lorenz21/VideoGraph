@@ -18,6 +18,9 @@ public class Guides2Activity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guides2);
+
+        getSupportActionBar().hide();
+
         this.rolling();
         this.freefall();
         this.projectileMotion();

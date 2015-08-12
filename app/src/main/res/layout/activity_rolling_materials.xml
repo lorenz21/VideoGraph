@@ -4,73 +4,89 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".RollingMaterialsActivity"
-    android:id="@+id/MaterialsPage"
-    android:background="@color/background">
+    android:background="@color/background"
+    tools:context=".RollingMaterialsActivity">
 
-
-    <LinearLayout
-        android:orientation="vertical"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:gravity="center"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:id="@+id/layout_car">
+        android:id="@+id/scrollView_materials" >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Toy Car"
-            android:paddingBottom="5dp"
-            android:id="@+id/textView2" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="left"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView2"
-            android:src="@drawable/car" />
-    </LinearLayout>
+            <LinearLayout
+                android:background="@color/background2"
+                android:padding="10dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:gravity="center_vertical"
+                android:id="@+id/linearLayout_car">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:id="@+id/layout_ruler">
+                <ImageView
+                    android:adjustViewBounds="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView_car"
+                    android:src="@drawable/car" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Ruler"
-            android:paddingBottom="5dp"
-            android:id="@+id/textView3" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/textView_plate"
+                    android:text="Toy Car"
+                    android:textColor="@color/text"
+                    android:layout_margin="10dp" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView3"
-            android:src="@drawable/ruler" />
+            </LinearLayout>
 
-    </LinearLayout>
+            <LinearLayout
+                android:background="@color/background2"
+                android:padding="10dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:gravity="center_vertical"
+                android:id="@+id/linearLayout_ruler">
+
+                <ImageView
+                    android:adjustViewBounds="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView_ruler"
+                    android:src="@drawable/ruler" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/textView_ruler"
+                    android:text="Ruler"
+                    android:textColor="@color/text"
+                    android:layout_margin="10dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
     <TextView
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_margin="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Next >"
+        android:textStyle="bold"
+        android:text="Next >> "
         android:textColor="@color/clickableText"
-        android:id="@+id/textView_next"
-        android:textStyle="bold" />
+        android:id="@+id/textView_next" />
+
 </LinearLayout>
