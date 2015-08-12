@@ -8,6 +8,7 @@
     tools:context=".TitleScreenActivity">
 
     <ImageView
+        android:adjustViewBounds="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/imageView_title"
