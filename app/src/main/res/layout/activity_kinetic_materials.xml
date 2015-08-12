@@ -96,7 +96,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Paperclip"
+                    android:text="Paperclip (2)"
                     android:textColor="@color/text"
                     android:id="@+id/textView_paperclip"
                     android:layout_margin="10dp" />
