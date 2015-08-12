@@ -39,7 +39,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/imageView_bent"
-                        android:src="@drawable/bent" />
+                        android:src="@drawable/paperclip2" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -87,7 +87,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/imageView_papers"
-                        android:src="@drawable/papers" />
+                        android:src="@drawable/cup2" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -158,7 +158,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/imageView_plateclip"
-                        android:src="@drawable/plateclip" />
+                        android:src="@drawable/plate2" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -229,7 +229,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/imageView_penniescup"
-                        android:src="@drawable/penniescup" />
+                        android:src="@drawable/cup3" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -277,7 +277,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/imageView_penniesplate"
-                        android:src="@drawable/penniesplate" />
+                        android:src="@drawable/plate3" />
                 </LinearLayout>
 
                 <LinearLayout
