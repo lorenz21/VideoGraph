@@ -26,6 +26,16 @@ public class ScaleActivity extends Activity {
     private double scale;
     boolean Meters;
     boolean English;
+    RadioButton metersbutton;
+    RadioButton Englishbutton;
+    EditText meterstext;
+    EditText feettext;
+    EditText inchestext;
+    TextView nextText;
+    TextView meterunit;
+    TextView feetunit;
+    TextView inchesunit;
+
 
 
     @Override
@@ -38,15 +48,15 @@ public class ScaleActivity extends Activity {
         y1 = getIntent().getIntExtra("y1",0);
         y2 = getIntent().getIntExtra("y2",0);
         String vidPath = getIntent().getStringExtra("vidPath");
-        final RadioButton metersbutton = (RadioButton)findViewById(R.id.radioButton_meters);
-        final RadioButton Englishbutton = (RadioButton)findViewById(R.id.radioButton_English);
-        final EditText meterstext = (EditText)findViewById(R.id.editText_meters);
-        final EditText feettext = (EditText)findViewById(R.id.editText_feet);
-        final EditText inchestext = (EditText)findViewById(R.id.editText_inches);
-        final TextView nextText = (TextView)findViewById(R.id.nextText);
-        final TextView meterunit = (TextView)findViewById(R.id.meterUnits);
-        final TextView feetunit = (TextView)findViewById(R.id.feetUnits);
-        final TextView inchesunit = (TextView)findViewById(R.id.inchesUnits);
+        metersbutton = (RadioButton)findViewById(R.id.radioButton_meters);
+        Englishbutton = (RadioButton)findViewById(R.id.radioButton_English);
+        meterstext = (EditText)findViewById(R.id.editText_meters);
+        feettext = (EditText)findViewById(R.id.editText_feet);
+        inchestext = (EditText)findViewById(R.id.editText_inches);
+        nextText = (TextView)findViewById(R.id.nextText);
+        meterunit = (TextView)findViewById(R.id.meterUnits);
+        feetunit = (TextView)findViewById(R.id.feetUnits);
+        inchesunit = (TextView)findViewById(R.id.inchesUnits);
 
 
 
@@ -56,7 +66,7 @@ public class ScaleActivity extends Activity {
         final int m = 82021/25000;
 
         // Length between pixels equation
-        final double pix = ((((x1 - x2) ^ 2) + ((y1 - y2) ^ 2))) ^ (1/2);
+        final double pix = Math.sqrt(((x1 - x2) * (x1 - x2)) + ((y1 - y2) * (y1 - y2)));
         /**
          * This is where the different units can be selected and the proper text box appears for the
          * units to be converted from pixels to the selected units.
