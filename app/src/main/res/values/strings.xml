@@ -17,4 +17,5 @@
     <string name="title_activity_rolling_materials">Rolling: Materials</string>
     <string name="title_activity_rolling_setup">Rolling: Setup</string>
     <string name="title_activity_kinetic_materials">Kinetic Friction: Materials</string>
+    <string name="title_activity_kinetic_setup">KineticSetupActivity</string>
 </resources>

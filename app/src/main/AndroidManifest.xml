@@ -51,6 +51,10 @@
             android:name=".KineticMaterialsActivity"
             android:label="@string/title_activity_kinetic_materials" >
         </activity>
+        <activity
+            android:name=".KineticSetupActivity"
+            android:label="@string/title_activity_kinetic_setup" >
+        </activity>
     </application>
 
 </manifest>
