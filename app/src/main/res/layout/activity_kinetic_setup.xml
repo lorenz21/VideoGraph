@@ -8,6 +8,7 @@
     tools:context=".KineticSetupActivity">
 
     <ScrollView
+        android:background="@color/background2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -23,30 +24,15 @@
                 android:background="@color/background2"
                 android:padding="10dp"
                 android:orientation="vertical"
-                android:layout_marginBottom="2dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical">
 
                 <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:layout_gravity="center"
-                        android:adjustViewBounds="true"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/imageView_bent"
-                        android:src="@drawable/paperclip2" />
-                </LinearLayout>
-
-                <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginBottom="5dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -65,17 +51,6 @@
                         android:textColor="@color/text" />
                 </LinearLayout>
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:background="@color/background2"
-                android:padding="10dp"
-                android:orientation="vertical"
-                android:layout_marginBottom="2dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical">
-
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
@@ -86,15 +61,25 @@
                         android:adjustViewBounds="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/imageView_papers"
-                        android:src="@drawable/cup2" />
+                        android:id="@+id/imageView_bent"
+                        android:src="@drawable/paperclip2" />
                 </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@color/background2"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
 
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginBottom="5dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -117,7 +102,7 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginBottom="5dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -136,36 +121,36 @@
                         android:textColor="@color/text" />
                 </LinearLayout>
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:background="@color/background2"
-                android:padding="10dp"
-                android:orientation="vertical"
-                android:layout_marginBottom="2dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical">
-
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp">
 
                     <ImageView
                         android:layout_gravity="center"
                         android:adjustViewBounds="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/imageView_plateclip"
-                        android:src="@drawable/plate2" />
+                        android:id="@+id/imageView_papers"
+                        android:src="@drawable/cup2" />
                 </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@color/background2"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
 
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginBottom="5dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -188,7 +173,7 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginBottom="5dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -207,17 +192,6 @@
                         android:textColor="@color/text" />
                 </LinearLayout>
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:background="@color/background2"
-                android:padding="10dp"
-                android:orientation="vertical"
-                android:layout_marginBottom="2dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical">
-
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
@@ -228,15 +202,25 @@
                         android:adjustViewBounds="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/imageView_penniescup"
-                        android:src="@drawable/cup3" />
+                        android:id="@+id/imageView_plateclip"
+                        android:src="@drawable/plate2" />
                 </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@color/background2"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
 
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginBottom="5dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -255,17 +239,6 @@
                         android:textColor="@color/text" />
                 </LinearLayout>
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:background="@color/background2"
-                android:padding="10dp"
-                android:orientation="vertical"
-                android:layout_marginBottom="2dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical">
-
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
@@ -276,15 +249,25 @@
                         android:adjustViewBounds="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/imageView_penniesplate"
-                        android:src="@drawable/plate3" />
+                        android:id="@+id/imageView_penniescup"
+                        android:src="@drawable/cup3" />
                 </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@color/background2"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
 
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginBottom="5dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -301,6 +284,20 @@
                         android:id="@+id/textView_penniesplate"
                         android:text="Place pennies onto the plate"
                         android:textColor="@color/text" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/imageView_penniesplate"
+                        android:src="@drawable/plate3" />
                 </LinearLayout>
 
             </LinearLayout>

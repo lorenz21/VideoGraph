@@ -1,9 +1,12 @@
 package lcc.videograph;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 public class KineticSetupActivity extends AppCompatActivity {
 
@@ -11,6 +14,19 @@ public class KineticSetupActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kinetic_setup);
+
+        this.next();
+    }
+
+    private void next() {
+        TextView nextTV = (TextView)findViewById(R.id.textView_next);
+        nextTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent nextIntent = new Intent(KineticSetupActivity.this, Home2Activity.class);
+                startActivity(nextIntent);
+            }
+        });
     }
 
     @Override
