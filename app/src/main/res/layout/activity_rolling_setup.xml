@@ -8,6 +8,7 @@
     tools:context=".RollingSetupActivity">
 
     <ScrollView
+        android:background="@color/background2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -23,30 +24,15 @@
                 android:background="@color/background2"
                 android:padding="10dp"
                 android:orientation="vertical"
-                android:layout_marginBottom="2dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical">
 
                 <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:layout_gravity="center"
-                        android:adjustViewBounds="true"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/imageView_carruler"
-                        android:src="@drawable/carruler" />
-                </LinearLayout>
-
-                <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginBottom="5dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -69,7 +55,7 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginBottom="5dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -86,6 +72,20 @@
                         android:id="@+id/textView_carruler2"
                         android:text="Stand ruler horizontally in front of the toy car, but behind the path the toy car will take during the experiment"
                         android:textColor="@color/text" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/imageView_carruler"
+                        android:src="@drawable/carruler" />
                 </LinearLayout>
 
             </LinearLayout>
