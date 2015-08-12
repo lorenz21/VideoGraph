@@ -1,0 +1,92 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    tools:context=".RollingMaterialsActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/scrollView_materials" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="left"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:background="@color/background2"
+                android:padding="10dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:gravity="center_vertical"
+                android:id="@+id/linearLayout_car">
+
+                <ImageView
+                    android:adjustViewBounds="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView_car"
+                    android:src="@drawable/car" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/textView_plate"
+                    android:text="Toy Car"
+                    android:textColor="@color/text"
+                    android:layout_margin="10dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@color/background2"
+                android:padding="10dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:gravity="center_vertical"
+                android:id="@+id/linearLayout_ruler">
+
+                <ImageView
+                    android:adjustViewBounds="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView_ruler"
+                    android:src="@drawable/ruler" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/textView_ruler"
+                    android:text="Ruler"
+                    android:textColor="@color/text"
+                    android:layout_margin="10dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_margin="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:textStyle="bold"
+        android:text="Next >> "
+        android:textColor="@color/clickableText"
+        android:id="@+id/textView_next" />
+
+</LinearLayout>

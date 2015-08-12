@@ -1,0 +1,107 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    tools:context=".RollingSetupActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/scrollView_setup" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="left"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:background="@color/background2"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_marginBottom="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/imageView_carruler"
+                        android:src="@drawable/carruler" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:id="@+id/textView_carrulerStep"
+                        android:text="1. " />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:id="@+id/textView_carruler"
+                        android:text="Place car on a flat surface"
+                        android:textColor="@color/text" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:id="@+id/textView_carrulerStep2"
+                        android:text="2. " />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:id="@+id/textView_carruler2"
+                        android:text="Stand ruler horizontally in front of the toy car, but behind the path the toy car will take during the experiment"
+                        android:textColor="@color/text" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_margin="5dp"
+        android:textStyle="bold"
+        android:text="Next >> "
+        android:textColor="@color/clickableText"
+        android:id="@+id/textView_next" />
+
+</LinearLayout>

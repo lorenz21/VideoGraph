@@ -18,6 +18,9 @@ public class Guides2Activity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guides2);
+
+        getSupportActionBar().hide();
+
         this.rolling();
         this.freefall();
         this.projectileMotion();
@@ -32,7 +35,7 @@ public class Guides2Activity extends ActionBarActivity {
         rollingLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent rollingIntent = new Intent(Guides2Activity.this, TitleScreenActivity.class);
+                Intent rollingIntent = new Intent(Guides2Activity.this, RollingMaterialsActivity.class);
                 startActivity(rollingIntent);
             }
         });
@@ -65,7 +68,7 @@ public class Guides2Activity extends ActionBarActivity {
         kineticLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent kineticIntent = new Intent(Guides2Activity.this, TitleScreenActivity.class);
+                Intent kineticIntent = new Intent(Guides2Activity.this, KineticMaterialsActivity.class);
                 startActivity(kineticIntent);
             }
         });
