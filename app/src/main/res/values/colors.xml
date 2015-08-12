@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="background">#00b0f0</color>
+    <color name="background">#003399</color>
     <color name="clickableText">#ffffff</color>
     <color name="information">#000000</color>
     <color name="text">#000000</color>

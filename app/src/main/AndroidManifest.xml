@@ -55,6 +55,10 @@
             android:name=".KineticSetupActivity"
             android:label="@string/title_activity_kinetic_setup" >
         </activity>
+        <activity
+            android:name=".Home2Activity"
+            android:label="@string/title_activity_home2" >
+        </activity>
     </application>
 
 </manifest>
