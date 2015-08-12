@@ -10,9 +10,6 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-/**
- * Created by Joseph on 7/23/2015.
- */
 public class HomeActivity extends Activity {
 String vidPathString;
 @Override

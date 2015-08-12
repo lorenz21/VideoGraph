@@ -17,14 +17,15 @@
         android:orientation="horizontal"
         android:layout_marginBottom="2dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical">
+        android:layout_height="100dp"
+        android:gravity="center_vertical"
+        android:id="@+id/linearLayout_capture">
 
         <ImageView
             android:adjustViewBounds="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageView_plate"
+            android:id="@+id/imageView_capture"
             android:src="@drawable/capture" />
 
         <LinearLayout
@@ -47,8 +48,94 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Enter brief description"
+                android:text="Create a new video"
                 android:id="@+id/textView_captureInfo" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@color/background2"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center_vertical"
+        android:id="@+id/linearLayout_analyze">
+
+        <ImageView
+            android:adjustViewBounds="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView_analyze"
+            android:src="@drawable/analyze" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold"
+                android:layout_marginBottom="1dp"
+                android:text="Analyze"
+                android:id="@+id/textView_analyze"
+                android:textColor="@color/text" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Graph an existing video"
+                android:id="@+id/textView_analyzeInfo" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@color/background2"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center_vertical"
+        android:id="@+id/linearLayout_guides">
+
+        <ImageView
+            android:adjustViewBounds="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView_guides"
+            android:src="@drawable/capture" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold"
+                android:layout_marginBottom="1dp"
+                android:text="Guides"
+                android:id="@+id/textView_guides"
+                android:textColor="@color/text" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="View sample experiments"
+                android:id="@+id/textView_guidesInfo" />
         </LinearLayout>
 
     </LinearLayout>
