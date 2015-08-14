@@ -17,6 +17,9 @@ public class TitleSplashActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_title_splash);
 
+        //hides info bar at top of screen
+        getSupportActionBar().hide();
+
         new Handler().postDelayed(new Runnable() {
 
             /*
