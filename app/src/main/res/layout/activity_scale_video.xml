@@ -1,35 +1,51 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#00B0F0">
 
-    <VideoView
-        android:layout_width="fill_parent"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        android:layout_height="fill_parent"
-        android:id="@+id/videoView"
-        android:layout_gravity="center"/>
-    <lcc.videograph.ScaleView
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="475dp"
-        android:id="@+id/scaleView" />
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-    <Button
+        <VideoView
+            android:layout_width="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_height="match_parent"
+            android:id="@+id/videoView"
+            android:layout_gravity="center"/>
+
+        <lcc.videograph.ScaleView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/scaleView" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit"
-        android:id="@+id/submit_button"
-        android:layout_gravity="right|top" />
+        android:layout_height="wrap_content">
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/delete_scale_button"
-        android:layout_gravity="left|top"
-        android:src="@android:drawable/ic_delete"
-        android:background="@android:color/transparent" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:id="@+id/submit_button"
+            android:layout_gravity="right|top" />
 
-</FrameLayout>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/delete_scale_button"
+            android:layout_gravity="left|top"
+            android:src="@android:drawable/ic_delete"
+            android:background="@android:color/transparent" />
+    </LinearLayout>
+
+</LinearLayout>
