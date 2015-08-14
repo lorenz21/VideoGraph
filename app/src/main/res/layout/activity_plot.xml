@@ -26,12 +26,9 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/time_text"
             android:layout_gravity="left|top"
-            android:textColor="#ffffff"
-            android:textSize="12sp"
-            android:shadowColor="#000000"
-            android:shadowDx="0"
-            android:shadowDy="0"
-            android:shadowRadius="25"/>
+            android:background="@android:color/background_dark"
+            android:textColor="#ffff493f"
+            android:textSize="12sp" />
     </FrameLayout>
 
     <LinearLayout
@@ -67,36 +64,8 @@
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/back_button"
-                android:background="@android:drawable/ic_media_previous" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:layout_height="match_parent">
-
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/fwd_button"
-                android:background="@android:drawable/ic_media_next" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:layout_height="match_parent">
-
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/seek_back"
-                android:background="@android:drawable/ic_media_rew"
+                android:id="@+id/play_button"
+                android:background="@android:drawable/ic_media_play"
                 />
         </LinearLayout>
 
@@ -111,7 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/seek_fwd"
-                android:background="@android:drawable/ic_media_ff" />
+                android:background="@android:drawable/ic_media_next" />
         </LinearLayout>
 
         <LinearLayout
