@@ -1,18 +1,123 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" android:background="#0099cc"
-    tools:context=".GraphingActivity">
-    <lcc.videograph.GraphView
-        android:id="@+id/graph_view"
-        android:background="#FFF"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingLeft="20dp"
-        android:paddingBottom="20dp"
-        android:paddingRight="20dp"
-        android:paddingTop="20dp"
-        />
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:id="@+id/deviceScreen"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:background="#ff000000">
+
+    <android.gesture.GestureOverlayView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/gestureOverlayView"
+        android:layout_alignParentEnd="false">
+
+    </android.gesture.GestureOverlayView>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:gravity="center">
+        <RadioGroup
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <RadioButton
+                android:layout_width="150dp"
+                android:layout_height="25dp"
+                android:text="Linear Fit"
+                android:id="@+id/linearFitRadioBtn"
+                android:checked="false"
+                android:textColor="#ffffff"
+                android:buttonTint="#0090ff" />
+            <RadioButton
+                android:layout_width="150dp"
+                android:layout_height="25dp"
+                android:text="Quadratic Fit"
+                android:id="@+id/quadraticFitRadioBtn"
+                android:checked="true"
+                android:textColor="#ffffff"
+                android:buttonTint="#0090ff" />
+            <RadioButton
+                android:layout_width="150dp"
+                android:layout_height="25dp"
+                android:text="Exponential Fit"
+                android:id="@+id/exponentialFitRadioBtn"
+                android:checked="false"
+                android:textColor="#ffffff"
+                android:buttonTint="#0090ff" />
+        </RadioGroup>
+
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="30dp">
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="150dp"
+            android:id="@+id/reverse_btn"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_1leftarrow"
+            android:padding="0dp"
+            android:scaleType="fitXY"
+            android:background="#00ffffff"
+             />
+
+        <lcc.videograph.GraphView
+            android:background="#ff7d7d7d"
+            android:layout_width="1500px"
+            android:layout_height="fill_parent"
+            android:paddingLeft="0px"
+            android:paddingBottom="0px"
+            android:paddingRight="0px"
+            android:paddingTop="0px"
+            android:id="@+id/graph_view" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="150dp"
+                android:id="@+id/advance_btn"
+                android:layout_gravity="center_vertical"
+                android:adjustViewBounds="false"
+                android:cropToPadding="false"
+                android:nestedScrollingEnabled="false"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_1rightarrow"
+                android:padding="0dp"
+                android:background="#00ffffff"
+                android:layout_marginTop="60dp" />
+
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/formulaBtn"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/ic_button"
+                android:nestedScrollingEnabled="false"
+                android:cropToPadding="false"
+                android:adjustViewBounds="false"
+                android:padding="0dp"
+                android:scaleType="fitXY" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
+

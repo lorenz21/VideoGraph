@@ -24,7 +24,9 @@
         </activity>
         <activity
             android:name=".GraphingActivity"
-            android:label="@string/title_activity_graph" >
+            android:label="@string/title_activity_graph"
+            android:screenOrientation="landscape"
+            >
         </activity>
         <activity
             android:name=".Guides2Activity"
