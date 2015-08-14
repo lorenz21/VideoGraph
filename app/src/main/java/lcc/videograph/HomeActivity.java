@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,27 +18,29 @@ protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         this.recordButton();
-        this.plotButton();
+        this.analyzeButton();
+        this.guidesButton();
         }
 
 private void recordButton() {
-        TextView record = (TextView)findViewById(R.id.textView_record);
+        ImageView record = (ImageView)findViewById(R.id.create_image);
         record.setOnClickListener(new View.OnClickListener() {
-@Override
-public void onClick(View view) {
-        Intent intentToRecordVideo = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
-        if(intentToRecordVideo.resolveActivity(getPackageManager()) != null){
-        startActivityForResult(intentToRecordVideo, 1);
-        }
-        }
+                @Override
+                public void onClick(View view) {
+                        Intent intentToRecordVideo = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+                        if (intentToRecordVideo.resolveActivity(getPackageManager()) != null) {
+                                startActivityForResult(intentToRecordVideo, 1);
+                        }
+                }
         });
         }
 
-private void plotButton(){
-        TextView plot = (TextView)findViewById(R.id.textView_plotPoints);
+private void analyzeButton(){
+        ImageView plot = (ImageView)findViewById(R.id.analyze_image);
         plot.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+
                         this.openGallery();
                 }
 
@@ -82,6 +85,16 @@ private void plotButton(){
 
                 }
         }
+        private void guidesButton() {
+                ImageView guide = (ImageView) findViewById(R.id.guides_image);
+                guide.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                                Intent intentToGuides = new Intent(HomeActivity.this, Guides2Activity.class);
+                                startActivity(intentToGuides);
+                        }
 
+                });
+        }
 }
 

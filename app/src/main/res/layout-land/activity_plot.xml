@@ -11,7 +11,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentBottom="true"
             android:layout_height="300dp"
-            android:id="@+id/videoView2"
+            android:id="@+id/plot_video"
             android:layout_gravity="center" />
         <lcc.videograph.DrawView
             android:layout_width="match_parent"

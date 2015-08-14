@@ -24,7 +24,7 @@ import java.util.ArrayList;
  */
 public class ScaleVideo extends Activity {
     String vidPathString;
-    MediaController myMediaController;
+    MyMediaController myMediaController;
     VideoView myVideoView;
     int count = 0;
     float touchX,touchY;
@@ -43,13 +43,14 @@ public class ScaleVideo extends Activity {
         myVideoView = (VideoView) findViewById(R.id.videoView);
         // Set the Image in ImageView after decoding the String
         myVideoView.setVideoPath(vidPathString);
-        myMediaController = new MediaController(this);
+        myMediaController = new MyMediaController(myVideoView.getContext());
         myVideoView.setMediaController(myMediaController);
         //Set the surface holder height to the screen dimensions
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
         myVideoView.getHolder().setFixedSize(size.x, size.y);
+        myVideoView.requestFocus();
         myVideoView.start();
         ImageButton scaleDeleteButton = (ImageButton)findViewById(R.id.delete_scale_button);
         scaleDeleteButton.setOnClickListener(new View.OnClickListener() {
@@ -102,7 +103,7 @@ public class ScaleVideo extends Activity {
                 y1 = yCorr.get(0);
                 x2 = xCorr.get(1);
                 y2 = yCorr.get(1);
-
+                Log.d("xTester",""+x1);
             }
 
         }

@@ -2,6 +2,7 @@ package lcc.videograph;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -50,7 +51,7 @@ public class PlotActivity extends Activity {
         String timeTest = String.valueOf(scale);
         Log.d("MyTag4", timeTest);
         //Initializing videoView to link this java activity to the .xml layout.
-        myVideoView = (VideoView) findViewById(R.id.videoView2);
+        myVideoView = (VideoView) findViewById(R.id.plot_video);
         //Uniform Resource Identifier(Uri) is used as an address to identify things
         myVideoView.setVideoURI(Uri.parse(vidPath));
         //Initializing the MediaController for the video to be played.

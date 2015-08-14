@@ -142,13 +142,8 @@ public class ScaleActivity extends Activity {
                         // This is where the scale is created from the typed value and pixel difference
                         scale = meterEntry / pix;
                         scaleIntent.putExtra("Scale", scale);
-                        String scaleTest = String.valueOf(scale);
-                        Log.d("scaleNum", scaleTest);
-
                         startActivity(scaleIntent);
 
-                        //String tester = Double.toString(scale);
-                        //test.setText(tester);
                    }
                 }
                 if (English == true) {
