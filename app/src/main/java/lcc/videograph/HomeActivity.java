@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,14 +18,14 @@ String vidPathString;
 protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        this.recordButton();
+        this.captureButton();
         this.analyzeButton();
         this.guidesButton();
         }
 
-private void recordButton() {
-        ImageView record = (ImageView)findViewById(R.id.imageView_capture);
-        record.setOnClickListener(new View.OnClickListener() {
+private void captureButton() {
+        LinearLayout capture = (LinearLayout)findViewById(R.id.linearLayout_capture);
+        capture.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                         Intent intentToRecordVideo = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
@@ -36,8 +37,8 @@ private void recordButton() {
         }
 
 private void analyzeButton(){
-        ImageView plot = (ImageView)findViewById(R.id.imageView_analyze);
-        plot.setOnClickListener(new View.OnClickListener() {
+        LinearLayout analyze = (LinearLayout)findViewById(R.id.linearLayout_analyze);
+        analyze.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 
@@ -86,8 +87,8 @@ private void analyzeButton(){
                 }
         }
         private void guidesButton() {
-                ImageView guide = (ImageView) findViewById(R.id.imageView_guides);
-                guide.setOnClickListener(new View.OnClickListener() {
+                LinearLayout guides = (LinearLayout)findViewById(R.id.linearLayout_guides);
+                guides.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
                                 Intent intentToGuides = new Intent(HomeActivity.this, Guides2Activity.class);

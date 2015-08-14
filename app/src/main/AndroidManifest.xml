@@ -51,10 +51,6 @@
             android:label="@string/title_activity_kinetic_setup" >
         </activity>
         <activity
-            android:name=".Home2Activity"
-            android:label="@string/title_activity_home2" >
-        </activity>
-        <activity
             android:name=".TitleSplashActivity"
             android:label="@string/title_activity_title_splash" >
             <intent-filter>
