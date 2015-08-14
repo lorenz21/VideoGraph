@@ -1,73 +1,129 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00B0F0">
+    android:background="#000000">
     <FrameLayout
         android:layout_width="wrap_content"
-        android:layout_height="550dp">
-    <VideoView
-        android:layout_width="fill_parent"
-        android:layout_height="550dp"
-        android:id="@+id/plot_video"
-        android:layout_gravity="center" />
-    <lcc.videograph.PlotView
-        android:layout_width="match_parent"
-        android:layout_height="550dp"
-        android:id="@+id/plotView" />
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <VideoView
+            android:layout_width="fill_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_height="fill_parent"
+            android:id="@+id/plot_video"
+            android:layout_gravity="center" />
+        <lcc.videograph.PlotView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/plotView" />
 
         <TextView
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/time_text"
-        android:layout_gravity="left|top"
-        android:background="@android:color/background_dark"
-        android:textColor="#ffff493f"
-        android:textSize="12sp" />
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/time_text"
+            android:layout_gravity="left|top"
+            android:background="@android:color/background_dark"
+            android:textColor="#ffff493f"
+            android:textSize="12sp" />
     </FrameLayout>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#00b0f0">
-
-        <ImageButton
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/delete_button"
-            android:background="@android:drawable/ic_delete" />
-
-        <ImageButton
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/back_button"
-            android:background="@android:drawable/ic_media_previous" />
-
-        <ImageButton
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/fwd_button"
-            android:background="@android:drawable/ic_media_next" />
-
-        <ImageButton
-            android:layout_width="60dp"
-            android:layout_height="match_parent"
-            android:id="@+id/graph_button"
-            android:background="@drawable/graph_button" />
-
-        <ImageButton
-            android:layout_width="60dp"
         android:layout_height="wrap_content"
-        android:id="@+id/seek_back"
-            android:background="@android:drawable/ic_media_rew"
-         />
+        android:gravity="center"
+        android:id="@+id/plot_buttons"
+        android:padding="5dp"
+        android:background="@color/background">
 
-        <ImageButton
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/seek_fwd"
-            android:background="@android:drawable/ic_media_ff" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/delete_button"
+                android:background="@android:drawable/ic_delete" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/back_button"
+                android:background="@android:drawable/ic_media_previous" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fwd_button"
+                android:background="@android:drawable/ic_media_next" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/seek_back"
+                android:background="@android:drawable/ic_media_rew"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/seek_fwd"
+                android:background="@android:drawable/ic_media_ff" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/graph_button"
+                android:background="@drawable/graph_button" />
+        </LinearLayout>
 
     </LinearLayout>
 </LinearLayout>

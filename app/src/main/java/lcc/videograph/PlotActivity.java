@@ -174,6 +174,13 @@ public class PlotActivity extends Activity {
                 }
             }
         });
+        View buttonView = (View)findViewById(R.id.plot_buttons);
+        buttonView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
 
     }
