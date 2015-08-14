@@ -15,11 +15,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/title_text"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Select Unit of Measurement"
         android:id="@+id/titleText"
-        android:textColor="#ff000000"
-        android:textSize="34sp"
+        android:textColor="@color/text"
         android:textIsSelectable="false" />
     <RadioGroup
         android:layout_width="fill_parent"
