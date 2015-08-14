@@ -28,7 +28,7 @@ public class TitleSplashActivity extends ActionBarActivity {
             public void run() {
                 // This method will be executed once the timer is over
                 // Start your app main activity
-                Intent i = new Intent(TitleSplashActivity.this, Home2Activity.class);
+                Intent i = new Intent(TitleSplashActivity.this, HomeActivity.class);
                 startActivity(i);
 
                 // close this activity
