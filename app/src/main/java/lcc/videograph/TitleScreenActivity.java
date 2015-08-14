@@ -3,6 +3,7 @@ package lcc.videograph;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -14,49 +15,37 @@ import org.w3c.dom.Text;
 
 
 public class TitleScreenActivity extends ActionBarActivity {
+    private static int SPLASH_TIME_OUT = 3000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_title_screen);
-        getSupportActionBar().hide();
 
-        this.startButton();
-        this.guidesButton();
-    }
+        new Handler().postDelayed(new Runnable() {
 
-    private void startButton() {
-        final TextView start = (TextView)findViewById(R.id.textView_start);
+            /*
+             * Showing splash screen with a timer. This will be useful when you
+             * want to show case your app logo / company
+             */
 
-        start.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                //start.setShadowLayer(10, 5, 5, Color.BLACK);
+            public void run() {
+                // This method will be executed once the timer is over
+                // Start your app main activity
+                Intent i = new Intent(TitleScreenActivity.this, HomeActivity.class);
+                startActivity(i);
 
-                Intent startIntent = new Intent(TitleScreenActivity.this, HomeActivity.class);
-                startActivity(startIntent);
+                // close this activity
+                finish();
             }
-        });
-    }
-
-    private void guidesButton() {
-        final TextView guides = (TextView)findViewById(R.id.textView_guides);
-
-        guides.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //guides.setShadowLayer(10, 5, 5, Color.BLACK);
-
-                Intent intentGoToGuides = new Intent(TitleScreenActivity.this, Guides2Activity.class);
-                startActivity(intentGoToGuides);
-            }
-        });
+        }, SPLASH_TIME_OUT);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_title_screen, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 

@@ -1,80 +1,143 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".HomeMenu"
-    android:background="#003399">
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:background="@color/background"
+    tools:context="lcc.videograph.Home2Activity">
 
     <LinearLayout
+        android:background="@color/background2"
+        android:padding="10dp"
         android:orientation="horizontal"
+        android:layout_marginBottom="2dp"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:id="@+id/CreateLayout">
+        android:layout_height="100dp"
+        android:gravity="center_vertical"
+        android:id="@+id/linearLayout_capture">
 
         <ImageView
+            android:adjustViewBounds="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/create_image"
-            android:src="@drawable/create"/>
+            android:id="@+id/imageView_capture"
+            android:src="@drawable/capture" />
 
-        <TextView
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Create a video."
-            android:id="@+id/CreateView"
-            android:layout_gravity="center_vertical"
-            android:textAlignment="center"
-            android:textColor="#ffffffff" />
+            android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold"
+                android:layout_marginBottom="1dp"
+                android:text="Capture"
+                android:id="@+id/textView_capture"
+                android:textColor="@color/text" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Create a new video"
+                android:id="@+id/textView_captureInfo" />
+        </LinearLayout>
 
     </LinearLayout>
 
     <LinearLayout
+        android:background="@color/background2"
+        android:padding="10dp"
         android:orientation="horizontal"
+        android:layout_marginBottom="2dp"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:id="@+id/AnalyzeLayout">
+        android:layout_height="100dp"
+        android:gravity="center_vertical"
+        android:id="@+id/linearLayout_analyze">
 
         <ImageView
+            android:adjustViewBounds="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/analyze_image"
-            android:src="@drawable/analyze"/>
+            android:id="@+id/imageView_analyze"
+            android:src="@drawable/analyze" />
 
-        <TextView
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Analyze a graph."
-            android:id="@+id/AnalyzeView"
-            android:layout_gravity="center_vertical"
-            android:textColor="#ffffffff" />
+            android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold"
+                android:layout_marginBottom="1dp"
+                android:text="Analyze"
+                android:id="@+id/textView_analyze"
+                android:textColor="@color/text" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Graph an existing video"
+                android:id="@+id/textView_analyzeInfo" />
+        </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout
+        android:background="@color/background2"
+        android:padding="10dp"
         android:orientation="horizontal"
+        android:layout_marginBottom="2dp"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:id="@+id/GuidesLayout">
+        android:layout_height="100dp"
+        android:gravity="center_vertical"
+        android:id="@+id/linearLayout_guides">
 
         <ImageView
+            android:adjustViewBounds="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/guides_image"
-            android:src="@drawable/create"/>
+            android:id="@+id/imageView_guides"
+            android:src="@drawable/capture" />
 
-        <TextView
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Go to guides."
-            android:id="@+id/GuidesView"
-            android:layout_gravity="center_vertical"
-            android:textColor="#ffffffff" />
+            android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold"
+                android:layout_marginBottom="1dp"
+                android:text="Guides"
+                android:id="@+id/textView_guides"
+                android:textColor="@color/text" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="View sample experiments"
+                android:id="@+id/textView_guidesInfo" />
+        </LinearLayout>
+
     </LinearLayout>
+
 </LinearLayout>

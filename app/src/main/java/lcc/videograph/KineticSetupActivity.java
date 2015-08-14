@@ -23,7 +23,7 @@ public class KineticSetupActivity extends AppCompatActivity {
         nextTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent nextIntent = new Intent(KineticSetupActivity.this, Home2Activity.class);
+                Intent nextIntent = new Intent(KineticSetupActivity.this, HomeActivity.class);
                 startActivity(nextIntent);
             }
         });

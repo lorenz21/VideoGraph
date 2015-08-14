@@ -23,7 +23,7 @@ protected void onCreate(Bundle savedInstanceState) {
         }
 
 private void recordButton() {
-        ImageView record = (ImageView)findViewById(R.id.create_image);
+        ImageView record = (ImageView)findViewById(R.id.imageView_capture);
         record.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -36,7 +36,7 @@ private void recordButton() {
         }
 
 private void analyzeButton(){
-        ImageView plot = (ImageView)findViewById(R.id.analyze_image);
+        ImageView plot = (ImageView)findViewById(R.id.imageView_analyze);
         plot.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -86,7 +86,7 @@ private void analyzeButton(){
                 }
         }
         private void guidesButton() {
-                ImageView guide = (ImageView) findViewById(R.id.guides_image);
+                ImageView guide = (ImageView) findViewById(R.id.imageView_guides);
                 guide.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
