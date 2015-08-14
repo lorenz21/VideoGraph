@@ -1,35 +1,92 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="#00B0F0">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <VideoView
+            android:layout_width="fill_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_height="fill_parent"
+            android:id="@+id/scale_video"
+            android:layout_gravity="center" />
+        <lcc.videograph.ScaleView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
-    <VideoView
-        android:layout_width="fill_parent"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        android:layout_height="fill_parent"
-        android:id="@+id/videoView"
-        android:layout_gravity="center"/>
-    <lcc.videograph.ScaleView
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="475dp"
-        android:id="@+id/scaleView" />
-
-    <Button
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Submit"
-        android:id="@+id/submit_button"
-        android:layout_gravity="right|top" />
+        android:gravity="center"
+        android:id="@+id/scale_buttons"
+        android:padding="5dp"
+        android:background="@color/background">
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/delete_scale_button"
-        android:layout_gravity="left|top"
-        android:src="@android:drawable/ic_delete"
-        android:background="@android:color/transparent" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="match_parent">
 
-</FrameLayout>
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/delete_scale_button"
+                android:background="@android:drawable/ic_delete" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/scale_play_button"
+                android:background="@android:drawable/ic_media_play"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/scale_pause_button"
+                android:background="@android:drawable/ic_media_pause" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/submit_button"
+                android:text="Submit" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

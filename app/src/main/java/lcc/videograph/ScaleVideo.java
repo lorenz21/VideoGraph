@@ -25,7 +25,7 @@ import java.util.ArrayList;
 public class ScaleVideo extends Activity {
     String vidPathString;
     MyMediaController myMediaController;
-    VideoView myVideoView;
+    VideoView scaleVideoView;
     int count = 0;
     float touchX,touchY;
     int x1,x2,y1,y2;
@@ -40,18 +40,9 @@ public class ScaleVideo extends Activity {
         setContentView(R.layout.activity_scale_video);
 
         vidPathString = getIntent().getStringExtra("vidPath");
-        myVideoView = (VideoView) findViewById(R.id.videoView);
+        scaleVideoView = (VideoView) findViewById(R.id.scale_video);
         // Set the Image in ImageView after decoding the String
-        myVideoView.setVideoPath(vidPathString);
-        myMediaController = new MyMediaController(myVideoView.getContext());
-        myVideoView.setMediaController(myMediaController);
-        //Set the surface holder height to the screen dimensions
-        Display display = getWindowManager().getDefaultDisplay();
-        Point size = new Point();
-        display.getSize(size);
-        myVideoView.getHolder().setFixedSize(size.x, size.y);
-        myVideoView.requestFocus();
-        myVideoView.start();
+        scaleVideoView.setVideoPath(vidPathString);
         ImageButton scaleDeleteButton = (ImageButton)findViewById(R.id.delete_scale_button);
         scaleDeleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +50,20 @@ public class ScaleVideo extends Activity {
                 Intent intent = getIntent();
                 finish();
                 startActivity(intent);
+            }
+        });
+        ImageButton scalePause = (ImageButton)findViewById(R.id.scale_pause_button);
+        scalePause.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                scaleVideoView.pause();
+            }
+        });
+        ImageButton scalePlay = (ImageButton)findViewById(R.id.scale_play_button);
+        scalePlay.setOnClickListener(new View.OnClickListener(){
+            @Override
+        public void onClick(View view){
+                scaleVideoView.start();
             }
         });
         Button submitButton = (Button) findViewById(R.id.submit_button);

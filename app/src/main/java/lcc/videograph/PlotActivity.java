@@ -77,6 +77,8 @@ public class PlotActivity extends Activity {
             @Override
             public void onClick(View view) {
                plotVideoView.start();
+                TextView runTime = (TextView) findViewById(R.id.time_text);
+                runTime.setText(Integer.toString(plotVideoView.getCurrentPosition()) + " (ms)");
 
             }
         });
