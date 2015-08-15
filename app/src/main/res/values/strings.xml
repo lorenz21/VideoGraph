@@ -19,5 +19,7 @@
     <string name="title_activity_kinetic_materials">Kinetic Friction: Materials</string>
     <string name="title_activity_kinetic_setup">Kinetic Friction: Setup</string>
     <string name="title_activity_home2">Home2Activity</string>
-    <string name="title_activity_title_splash">TitleSplashActivity</string>
+    <string name="title_activity_title_splash">VideoGraph</string>
+    <string name="title_activity_freefall_materials">Freefall: Materials</string>
+    <string name="title_activity_freefall_setup">Freefall: Setup</string>
 </resources>

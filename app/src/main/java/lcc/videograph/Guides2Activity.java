@@ -19,7 +19,7 @@ public class Guides2Activity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guides2);
 
-        getSupportActionBar().hide();
+        //getSupportActionBar().hide();
 
         this.rolling();
         this.freefall();
