@@ -31,6 +31,12 @@ public class ScaleVideo extends Activity {
     int x1,x2,y1,y2;
     ArrayList<Integer> xCorr = new ArrayList<Integer>();
     ArrayList<Integer> yCorr = new ArrayList<Integer>();
+    ImageButton scalePause;
+    ImageButton scaleDeleteButton;
+    ImageButton scalePlay;
+    ImageButton seekForward;
+    ImageButton seekBackWard;
+    ImageButton submitButton;
 
 
 
@@ -43,7 +49,8 @@ public class ScaleVideo extends Activity {
         scaleVideoView = (VideoView) findViewById(R.id.scale_video);
         // Set the Image in ImageView after decoding the String
         scaleVideoView.setVideoPath(vidPathString);
-        ImageButton scaleDeleteButton = (ImageButton)findViewById(R.id.delete_scale_button);
+
+        scaleDeleteButton = (ImageButton)findViewById(R.id.delete_scale_button);
         scaleDeleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View View) {
@@ -52,21 +59,46 @@ public class ScaleVideo extends Activity {
                 startActivity(intent);
             }
         });
-        ImageButton scalePause = (ImageButton)findViewById(R.id.scale_pause_button);
+        scalePause = (ImageButton)findViewById(R.id.scale_pause_button);
         scalePause.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 scaleVideoView.pause();
+                scalePause.setVisibility(View.INVISIBLE);
+                scalePlay.setVisibility(View.VISIBLE);
+
             }
         });
-        ImageButton scalePlay = (ImageButton)findViewById(R.id.scale_play_button);
+        scalePlay = (ImageButton)findViewById(R.id.scale_play_button);
         scalePlay.setOnClickListener(new View.OnClickListener(){
             @Override
         public void onClick(View view){
                 scaleVideoView.start();
+                scalePause.setVisibility(View.VISIBLE);
+                scalePlay.setVisibility(View.INVISIBLE);
             }
         });
-        Button submitButton = (Button) findViewById(R.id.submit_button);
+        seekForward = (ImageButton)findViewById(R.id.scale_seek_forward);
+        seekForward.setOnClickListener(new View.OnClickListener(){
+            @Override
+        public void onClick(View view){
+              scaleVideoView.seekTo(scaleVideoView.getCurrentPosition() + 1000);
+                if(scaleVideoView.isPlaying() == true) {
+                    scaleVideoView.start();
+                }
+            }
+        });
+        seekBackWard = (ImageButton)findViewById(R.id.scale_seek_back);
+        seekBackWard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                scaleVideoView.seekTo(scaleVideoView.getCurrentPosition() - 1000);
+                if (scaleVideoView.isPlaying() == true) {
+                    scaleVideoView.start();
+                }
+            }
+        });
+        submitButton = (ImageButton) findViewById(R.id.submit_button);
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View View) {

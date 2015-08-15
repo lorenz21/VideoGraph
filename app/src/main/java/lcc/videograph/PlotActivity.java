@@ -12,8 +12,12 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
+
+import java.text.Format;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Joseph on 7/23/2015.
@@ -34,7 +38,11 @@ public class PlotActivity extends Activity {
     private  List<Double> xTap = new ArrayList<Double>();
     private  List<Double> yTap = new ArrayList<Double>();
     double scale;
+    private long timeCount;
+    private String hms;
     private android.os.Handler timerHandler = new android.os.Handler();
+    private TextView runTime;
+    private Format sDate = new SimpleDateFormat("mm:ss.SSS");
 
 
     @Override
@@ -43,6 +51,7 @@ public class PlotActivity extends Activity {
         setContentView(R.layout.activity_plot);
         String vidPath = getIntent().getStringExtra("vidPath");
         scale = getIntent().getDoubleExtra("Scale", 0);
+        runTime = (TextView) findViewById(R.id.time_text);
         //Initializing videoView to link this java activity to the .xml layout.
         plotVideoView = (VideoView) findViewById(R.id.plot_video);
         //Uniform Resource Identifier(Uri) is used as an address to identify things
@@ -56,8 +65,8 @@ public class PlotActivity extends Activity {
         plotVideoView.setOnErrorListener(myVideoViewErrorListener);
         //Sets focus on the widget
         plotVideoView.requestFocus();
-        TextView runTime = (TextView) findViewById(R.id.time_text);
-        runTime.setText(Integer.toString(plotVideoView.getCurrentPosition()) + " (ms)");
+        timeCount = (long)(plotVideoView.getCurrentPosition());
+        runTime.setText(sDate.format(timeCount) + " (ms)");
         //Initialize seekbutton to be used to go frame-by-frame in video.
         ImageButton buttonFwdSeek = (ImageButton)findViewById(R.id.seek_fwd);
         //Set's OnClickListener to know when the button had been clicked, then executes the code.
@@ -65,20 +74,20 @@ public class PlotActivity extends Activity {
             @Override
             public void onClick(View view) {
                 currentTime = plotVideoView.getCurrentPosition();
-                TextView runTime = (TextView) findViewById(R.id.time_text);
-                runTime.setText(Integer.toString(plotVideoView.getCurrentPosition()) + " (ms)");
+                timeCount = (long)(plotVideoView.getCurrentPosition());
+                runTime.setText(sDate.format(timeCount) + " (ms)");
                 plotVideoView.start();
                 timerHandler.postDelayed(timer, 100);
 
             }
         });
-        final ImageButton playButton = (ImageButton)findViewById(R.id.play_button);
+        ImageButton playButton = (ImageButton)findViewById(R.id.play_button);
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                plotVideoView.start();
                 TextView runTime = (TextView) findViewById(R.id.time_text);
-                runTime.setText(Integer.toString(plotVideoView.getCurrentPosition()) + " (ms)");
+                runTime.setText(sDate.format(timeCount) + " (ms)");
 
             }
         });

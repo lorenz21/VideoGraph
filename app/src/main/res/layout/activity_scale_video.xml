@@ -17,7 +17,8 @@
             android:layout_gravity="center" />
         <lcc.videograph.ScaleView
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+             />
 
 
     </FrameLayout>
@@ -42,7 +43,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/delete_scale_button"
-                android:background="@android:drawable/ic_delete" />
+                android:background="@android:drawable/ic_menu_delete" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/scale_seek_back"
+                android:background="@android:drawable/ic_media_rew" />
         </LinearLayout>
 
         <LinearLayout
@@ -51,13 +65,22 @@
             android:layout_weight="1"
             android:gravity="center"
             android:layout_height="match_parent">
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/scale_play_button"
-                android:background="@android:drawable/ic_media_play"
-                />
+                android:background="@android:drawable/ic_media_play" />
+                <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/scale_pause_button"
+                android:background="@android:drawable/ic_media_pause"
+                    android:visibility="invisible" />
+            </FrameLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -70,8 +93,8 @@
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/scale_pause_button"
-                android:background="@android:drawable/ic_media_pause" />
+                android:id="@+id/scale_seek_forward"
+                android:background="@android:drawable/ic_media_ff" />
         </LinearLayout>
 
         <LinearLayout
@@ -81,11 +104,12 @@
             android:gravity="center"
             android:layout_height="match_parent">
 
-            <Button
+            <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/submit_button"
-                android:text="Submit" />
+                android:text="Submit"
+                android:background="@android:drawable/checkbox_on_background" />
         </LinearLayout>
 
     </LinearLayout>
