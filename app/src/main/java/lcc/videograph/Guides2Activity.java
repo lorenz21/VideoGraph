@@ -19,7 +19,7 @@ public class Guides2Activity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guides2);
 
-        getSupportActionBar().hide();
+        //getSupportActionBar().hide();
 
         this.rolling();
         this.freefall();
@@ -46,7 +46,7 @@ public class Guides2Activity extends ActionBarActivity {
         freefallLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent freefallIntent = new Intent(Guides2Activity.this, HomeActivity.class);
+                Intent freefallIntent = new Intent(Guides2Activity.this, TitleScreenActivity.class);
                 startActivity(freefallIntent);
             }
         });
@@ -57,7 +57,7 @@ public class Guides2Activity extends ActionBarActivity {
         projectileLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent projectileIntent = new Intent(Guides2Activity.this, HomeActivity.class);
+                Intent projectileIntent = new Intent(Guides2Activity.this, TitleScreenActivity.class);
                 startActivity(projectileIntent);
             }
         });
@@ -79,7 +79,7 @@ public class Guides2Activity extends ActionBarActivity {
         pendulumLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent pendulumIntent = new Intent(Guides2Activity.this, HomeActivity.class);
+                Intent pendulumIntent = new Intent(Guides2Activity.this, TitleScreenActivity.class);
                 startActivity(pendulumIntent);
             }
         });
@@ -90,14 +90,14 @@ public class Guides2Activity extends ActionBarActivity {
         inertiaLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent inertiaIntent = new Intent(Guides2Activity.this, HomeActivity.class);
+                Intent inertiaIntent = new Intent(Guides2Activity.this, TitleScreenActivity.class);
                 startActivity(inertiaIntent);
             }
         });
     }
 
     private void website() {
-        LinearLayout websiteLayout = (LinearLayout)findViewById(R.id.layout_website);
+        /*LinearLayout websiteLayout = (LinearLayout)findViewById(R.id.layout_website);
         websiteLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -105,6 +105,7 @@ public class Guides2Activity extends ActionBarActivity {
                 startActivity(websiteIntent);
             }
         });
+        */
     }
 
     @Override

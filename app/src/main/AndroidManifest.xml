@@ -25,12 +25,11 @@
         <activity
             android:name=".GraphingActivity"
             android:label="@string/title_activity_graph"
-            android:screenOrientation="landscape"
-            >
+            android:screenOrientation="landscape" >
         </activity>
         <activity
             android:name=".Guides2Activity"
-            android:label="GraphingActivity" >
+            android:label="Guides" >
         </activity>
         <activity
             android:name=".ScaleVideo"
@@ -60,6 +59,26 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".FreefallMaterialsActivity"
+            android:label="@string/title_activity_freefall_materials" >
+        </activity>
+        <activity
+            android:name=".FreefallSetupActivity"
+            android:label="@string/title_activity_freefall_setup" >
+        </activity>
+        <activity
+            android:name=".PendulumMaterialsActivity"
+            android:label="@string/title_activity_pendulum_materials" >
+        </activity>
+        <activity
+            android:name=".PendulumSetupActivity"
+            android:label="@string/title_activity_pendulum_setup" >
+        </activity>
+        <activity
+            android:name=".AboutActivity"
+            android:label="@string/title_activity_about" >
         </activity>
     </application>
 
