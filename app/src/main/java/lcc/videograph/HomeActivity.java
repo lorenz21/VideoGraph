@@ -21,6 +21,18 @@ protected void onCreate(Bundle savedInstanceState) {
         this.captureButton();
         this.analyzeButton();
         this.guidesButton();
+        this.aboutButton();
+        }
+
+        private void aboutButton() {
+                LinearLayout about = (LinearLayout)findViewById(R.id.linearLayout_about);
+                about.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                                Intent whoIntent = new Intent(HomeActivity.this, AboutActivity.class);
+                                startActivity(whoIntent);
+                        }
+                });
         }
 
 private void captureButton() {

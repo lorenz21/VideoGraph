@@ -72,6 +72,14 @@
             android:name=".PendulumMaterialsActivity"
             android:label="@string/title_activity_pendulum_materials" >
         </activity>
+        <activity
+            android:name=".PendulumSetupActivity"
+            android:label="@string/title_activity_pendulum_setup" >
+        </activity>
+        <activity
+            android:name=".AboutActivity"
+            android:label="@string/title_activity_about" >
+        </activity>
     </application>
 
 </manifest>

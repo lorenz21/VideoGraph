@@ -79,7 +79,7 @@ public class Guides2Activity extends ActionBarActivity {
         pendulumLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent pendulumIntent = new Intent(Guides2Activity.this, TitleScreenActivity.class);
+                Intent pendulumIntent = new Intent(Guides2Activity.this, PendulumMaterialsActivity.class);
                 startActivity(pendulumIntent);
             }
         });
