@@ -59,7 +59,7 @@ private void analyzeButton(){
 
                 private void openGallery() {
                         Intent intentOpenGallery = new Intent(Intent.ACTION_PICK, MediaStore.Video.Media.INTERNAL_CONTENT_URI);
-                        startActivityForResult(intentOpenGallery, 1);
+                        startActivityForResult(intentOpenGallery, 2);
                 }
         });
     }
@@ -70,7 +70,7 @@ private void analyzeButton(){
                 super.onActivityResult(requestCode, resultCode, data);
                 try {
                         // When an Video is picked
-                        if (requestCode == 1 && resultCode == RESULT_OK
+                        if (requestCode == 2 && resultCode == RESULT_OK
                                 && null != data) {
                                 // Get the Video from data
                                 Uri selectedVideo = data.getData();

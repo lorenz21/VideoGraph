@@ -158,7 +158,6 @@ public class ScaleActivity extends Activity {
                         return;
                     }
                     else{
-                        Toast.makeText(ScaleActivity.this, "Enter ft/in'", Toast.LENGTH_SHORT).show();
                         // Getting and parsing the values typed in the text boxes
 
                         double feetEntry = Double.parseDouble(ft);

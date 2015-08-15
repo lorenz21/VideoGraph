@@ -66,7 +66,7 @@ public class PlotActivity extends Activity {
         //Sets focus on the widget
         plotVideoView.requestFocus();
         timeCount = (long)(plotVideoView.getCurrentPosition());
-        runTime.setText(sDate.format(timeCount) + " (ms)");
+        runTime.setText(sDate.format(timeCount) + " [ms]");
         //Initialize seekbutton to be used to go frame-by-frame in video.
         ImageButton buttonFwdSeek = (ImageButton)findViewById(R.id.seek_fwd);
         //Set's OnClickListener to know when the button had been clicked, then executes the code.
@@ -75,7 +75,7 @@ public class PlotActivity extends Activity {
             public void onClick(View view) {
                 currentTime = plotVideoView.getCurrentPosition();
                 timeCount = (long)(plotVideoView.getCurrentPosition());
-                runTime.setText(sDate.format(timeCount) + " (ms)");
+                runTime.setText(sDate.format(timeCount) + " [ms]");
                 plotVideoView.start();
                 timerHandler.postDelayed(timer, 100);
 
@@ -87,7 +87,7 @@ public class PlotActivity extends Activity {
             public void onClick(View view) {
                plotVideoView.start();
                 TextView runTime = (TextView) findViewById(R.id.time_text);
-                runTime.setText(sDate.format(timeCount) + " (ms)");
+                runTime.setText(sDate.format(timeCount) + " [ms]");
 
             }
         });

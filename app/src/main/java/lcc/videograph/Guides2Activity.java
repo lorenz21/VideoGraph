@@ -19,7 +19,7 @@ public class Guides2Activity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guides2);
 
-        //getSupportActionBar().hide();
+        getSupportActionBar().hide();
 
         this.rolling();
         this.freefall();
@@ -46,7 +46,7 @@ public class Guides2Activity extends ActionBarActivity {
         freefallLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent freefallIntent = new Intent(Guides2Activity.this, FreefallMaterialsActivity.class);
+                Intent freefallIntent = new Intent(Guides2Activity.this, TitleScreenActivity.class);
                 startActivity(freefallIntent);
             }
         });
@@ -79,7 +79,7 @@ public class Guides2Activity extends ActionBarActivity {
         pendulumLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent pendulumIntent = new Intent(Guides2Activity.this, PendulumMaterialsActivity.class);
+                Intent pendulumIntent = new Intent(Guides2Activity.this, TitleScreenActivity.class);
                 startActivity(pendulumIntent);
             }
         });
@@ -97,7 +97,7 @@ public class Guides2Activity extends ActionBarActivity {
     }
 
     private void website() {
-        /*LinearLayout websiteLayout = (LinearLayout)findViewById(R.id.layout_website);
+        LinearLayout websiteLayout = (LinearLayout)findViewById(R.id.layout_website);
         websiteLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -105,7 +105,6 @@ public class Guides2Activity extends ActionBarActivity {
                 startActivity(websiteIntent);
             }
         });
-        */
     }
 
     @Override
