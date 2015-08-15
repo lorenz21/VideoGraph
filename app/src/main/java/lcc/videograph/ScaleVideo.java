@@ -24,7 +24,6 @@ import java.util.ArrayList;
  */
 public class ScaleVideo extends Activity {
     String vidPathString;
-    MyMediaController myMediaController;
     VideoView scaleVideoView;
     int count = 0;
     float touchX,touchY;

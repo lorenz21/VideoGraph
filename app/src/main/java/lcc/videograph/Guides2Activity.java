@@ -46,7 +46,7 @@ public class Guides2Activity extends ActionBarActivity {
         freefallLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent freefallIntent = new Intent(Guides2Activity.this, TitleScreenActivity.class);
+                Intent freefallIntent = new Intent(Guides2Activity.this, HomeActivity.class);
                 startActivity(freefallIntent);
             }
         });
@@ -57,7 +57,7 @@ public class Guides2Activity extends ActionBarActivity {
         projectileLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent projectileIntent = new Intent(Guides2Activity.this, TitleScreenActivity.class);
+                Intent projectileIntent = new Intent(Guides2Activity.this, HomeActivity.class);
                 startActivity(projectileIntent);
             }
         });
@@ -79,7 +79,7 @@ public class Guides2Activity extends ActionBarActivity {
         pendulumLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent pendulumIntent = new Intent(Guides2Activity.this, TitleScreenActivity.class);
+                Intent pendulumIntent = new Intent(Guides2Activity.this, HomeActivity.class);
                 startActivity(pendulumIntent);
             }
         });
@@ -90,7 +90,7 @@ public class Guides2Activity extends ActionBarActivity {
         inertiaLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent inertiaIntent = new Intent(Guides2Activity.this, TitleScreenActivity.class);
+                Intent inertiaIntent = new Intent(Guides2Activity.this, HomeActivity.class);
                 startActivity(inertiaIntent);
             }
         });
