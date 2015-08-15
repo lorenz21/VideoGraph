@@ -46,7 +46,7 @@ public class Guides2Activity extends ActionBarActivity {
         freefallLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent freefallIntent = new Intent(Guides2Activity.this, TitleScreenActivity.class);
+                Intent freefallIntent = new Intent(Guides2Activity.this, FreefallMaterialsActivity.class);
                 startActivity(freefallIntent);
             }
         });
@@ -97,7 +97,7 @@ public class Guides2Activity extends ActionBarActivity {
     }
 
     private void website() {
-        LinearLayout websiteLayout = (LinearLayout)findViewById(R.id.layout_website);
+        /*LinearLayout websiteLayout = (LinearLayout)findViewById(R.id.layout_website);
         websiteLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -105,6 +105,7 @@ public class Guides2Activity extends ActionBarActivity {
                 startActivity(websiteIntent);
             }
         });
+        */
     }
 
     @Override

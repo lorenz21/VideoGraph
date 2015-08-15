@@ -68,6 +68,10 @@
             android:name=".FreefallSetupActivity"
             android:label="@string/title_activity_freefall_setup" >
         </activity>
+        <activity
+            android:name=".PendulumMaterialsActivity"
+            android:label="@string/title_activity_pendulum_materials" >
+        </activity>
     </application>
 
 </manifest>

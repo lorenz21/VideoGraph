@@ -2,7 +2,7 @@
 <resources>
     <color name="background">#003399</color>
     <color name="clickableText">#ffffff</color>
-    <color name="information">#000000</color>
+    <color name="information">#999999</color>
     <color name="text">#000000</color>
     <color name="background2">#ffffff</color>
 </resources>

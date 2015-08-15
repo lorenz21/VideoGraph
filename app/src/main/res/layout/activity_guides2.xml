@@ -16,7 +16,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:id="@+id/layout_rolling">
+        android:id="@+id/layout_rolling"
+        android:gravity="center_vertical">
 
         <TextView
             android:layout_width="wrap_content"
@@ -33,7 +34,8 @@
             android:layout_gravity="center_vertical"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Determine the speed of an object"
-            android:id="@+id/textView6" />
+            android:id="@+id/textView6"
+            android:textColor="@color/information" />
 
     </LinearLayout>
 
@@ -42,7 +44,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:id="@+id/layout_freefall">
+        android:id="@+id/layout_freefall"
+        android:gravity="center_vertical">
 
         <TextView
             android:layout_width="wrap_content"
@@ -59,7 +62,8 @@
             android:layout_gravity="center_vertical"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Determine the acceleration of a falling object"
-            android:id="@+id/textView5" />
+            android:id="@+id/textView5"
+            android:textColor="@color/information" />
     </LinearLayout>
 
     <LinearLayout
@@ -67,32 +71,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:id="@+id/layout_projectile">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Projectile Motion"
-            android:textColor="@color/clickableText"
-            android:textStyle="bold"
-            android:id="@+id/textView_projectile" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Determine the X and Y graphs of projectile motion"
-            android:id="@+id/textView7" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:id="@+id/layout_kinetic">
+        android:id="@+id/layout_kinetic"
+        android:gravity="center_vertical">
 
         <TextView
             android:layout_width="wrap_content"
@@ -109,7 +89,8 @@
             android:layout_gravity="center_vertical"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Determine the coefficient of kinetic friction"
-            android:id="@+id/textView8" />
+            android:id="@+id/textView8"
+            android:textColor="@color/information" />
     </LinearLayout>
 
     <LinearLayout
@@ -117,7 +98,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:id="@+id/layout_pendulum">
+        android:id="@+id/layout_pendulum"
+        android:gravity="center_vertical">
 
         <TextView
             android:layout_width="wrap_content"
@@ -134,7 +116,8 @@
             android:layout_gravity="center_vertical"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Determine the period and amplitude of a pendulum"
-            android:id="@+id/textView9" />
+            android:id="@+id/textView9"
+            android:textColor="@color/information" />
     </LinearLayout>
 
     <LinearLayout
@@ -142,7 +125,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:id="@+id/layout_inertia">
+        android:id="@+id/layout_inertia"
+        android:gravity="center_vertical">
 
         <TextView
             android:layout_width="wrap_content"
@@ -159,7 +143,8 @@
             android:layout_gravity="center_vertical"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Determine the moment of inertia of an object"
-            android:id="@+id/textView10" />
+            android:id="@+id/textView10"
+            android:textColor="@color/information" />
     </LinearLayout>
 
     <LinearLayout
@@ -167,27 +152,26 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:gravity="bottom"
-        android:id="@+id/layout_website">
+        android:id="@+id/layout_projectile"
+        android:gravity="center_vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center"
-            android:text="For lab worksheets and computations \nvisit our website @"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="#ffffff"
-            android:id="@+id/textView11" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Projectile Motion"
+            android:textColor="@color/clickableText"
+            android:textStyle="bold"
+            android:id="@+id/textView_projectile" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center"
-            android:text="www.someurl.com"
+            android:layout_gravity="center_vertical"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="#ffffff"
-            android:id="@+id/textView12" />
+            android:text="Determine the X and Y graphs of projectile motion"
+            android:id="@+id/textView7"
+            android:textColor="@color/information" />
     </LinearLayout>
+
 </LinearLayout>
